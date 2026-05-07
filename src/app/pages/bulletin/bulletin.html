@@ -1,0 +1,158 @@
+<div class="bull-hero">
+  <div class="hero-col content-col">
+    <div class="masthead">The<br><em>Bulletin</em></div>
+    <div class="issue-line">
+      <div class="line"></div><span>Weekly · Bruja Thembi · Since 2021</span>
+    </div>
+    <p class="bull-desc">Insights from the practice — aura science, breathwork, client breakthroughs, and the energetic
+      intelligence behind everyday experience.</p>
+    <div class="bull-social">
+      <a href="#" class="social-btn">YouTube</a>
+      <a href="#" class="social-btn">Facebook</a>
+      <a routerLink="/contact" class="social-btn">WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-col img-col">
+    <div class="img-fill top-img"><img src="assets/images/portraits/portrait-studio.jpg" alt="Bruja Thembi" /></div>
+    <div class="img-fill btm-img"><img src="assets/images/portraits/portrait-rust.jpg" alt="Bruja Thembi studio" /></div>
+  </div>
+</div>
+
+<nav class="cat-nav">
+  <a href="#videos">Videos</a>
+  <a href="#articles">Articles</a>
+  <a href="#stories">Client Stories</a>
+  <a href="#connect">Connect</a>
+</nav>
+
+<!-- FEATURED -->
+<div class="featured-section">
+  <div class="feat-img reveal">
+    <img src="assets/images/bulletin/art-capsule.jpg" alt="Capsule science" />
+    <span class="feat-badge">Featured</span>
+  </div>
+  <div class="feat-content reveal d1">
+    <span class="tag-pill green">Apothecary Science</span>
+    <div class="post-meta"><span>May 2026</span><span>5 min read</span></div>
+    <h3>Why a Capsule and<br>Not a Cup of <em>Tea?</em></h3>
+    <p class="excerpt">Steeping is popular — but it acts as a water-based extract that leaves up to 70% of the plant's
+      beneficial minerals behind. When you consume the whole ground herb in a capsule, you ingest 100% of available
+      nutrients, including the fat-soluble compounds hot water simply cannot reach.</p>
+    <a href="#" class="read-more">Read Full Article →</a>
+  </div>
+</div>
+
+<!-- VIDEOS -->
+<section id="videos" class="videos-section">
+  <div class="v-header reveal">
+    <div>
+      <span class="eyebrow lt">Video Content</span>
+      <h2 class="sec lt">Watch & <em>Learn</em></h2>
+      <div class="divider lt"></div>
+    </div>
+    <div>
+      <p class="body-text lt">All videos embed directly. New sessions, case studies, and product explainers drop weekly
+        across YouTube and Facebook.</p>
+    </div>
+  </div>
+  <div class="video-grid reveal">
+    @for (v of videos; track v.title) {
+      <div class="v-card">
+        <div class="v-thumb">
+          <img [src]="v.img" [alt]="v.title" />
+          <div class="play-btn">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" /></svg>
+          </div>
+          <span class="v-dur">{{v.duration}}</span>
+        </div>
+        <div class="v-info">
+          <span class="v-meta">{{v.meta}}</span>
+          <h4>{{v.title}}</h4>
+          <p>{{v.desc}}</p>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section id="articles" class="articles-section">
+  <div class="a-header reveal">
+    <span class="eyebrow">From the Archive</span>
+    <h2 class="sec">Articles & <em>Insights</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="articles-grid">
+    @for (a of articles; track a.title; let i = $index) {
+      <div class="a-card reveal" [class]="'d' + i">
+        <div class="a-img img-fill"><img [src]="a.img" [alt]="a.title" /></div>
+        <span class="a-meta">{{a.meta}}</span>
+        <span [class]="'tag-pill ' + a.tag">{{a.tagLabel}}</span>
+        <h3>{{a.title}}</h3>
+        <p>{{a.desc}}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CLIENT STORIES -->
+<section id="stories" class="stories-section">
+  <div class="reveal">
+    <span class="eyebrow">Client Stories</span>
+    <h2 class="sec">The Work, in Their Own <em>Words</em></h2>
+    <div class="divider"></div>
+  </div>
+  <div class="wa-feed reveal">
+    @for (w of waStories; track w.title) {
+      <div class="wa-card">
+        <div class="wa-img"><img [src]="w.img" [alt]="w.title" /></div>
+        <div class="wa-content">
+          <span class="wa-tag">{{w.tag}}</span>
+          <h4>{{w.title}}</h4>
+          <p>{{w.quote}}</p>
+          <span class="wa-outcome">{{w.outcome}}</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" class="connect-section">
+  <div class="reveal">
+    <h2 class="sec lt">Follow the <em>Practice</em></h2>
+    <p class="body-text lt" style="margin:1.5rem 0 2.5rem;max-width:420px">New content drops weekly — sessions, case
+      studies, product education, and client stories.</p>
+    <div class="channels">
+      <a href="#" class="channel-row">
+        <div>
+          <div class="ch-name">YouTube</div>
+          <div class="ch-handle">&#64;BrujaThembi</div>
+        </div>
+        <span>→</span>
+      </a>
+      <a href="#" class="channel-row">
+        <div>
+          <div class="ch-name">Facebook</div>
+          <div class="ch-handle">Bruja Thembi</div>
+        </div>
+        <span>→</span>
+      </a>
+      <a href="https://wa.me/27793574091" class="channel-row">
+        <div>
+          <div class="ch-name">WhatsApp Broadcast</div>
+          <div class="ch-handle">079-357-4091</div>
+        </div>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+  <div class="reveal d1">
+    <div class="wa-broadcast">
+      <h4>WhatsApp Broadcast List</h4>
+      <p>Save <strong>079-357-4091</strong> and message <strong>"Add me to the bulletin"</strong> to receive weekly
+        updates, session announcements, and product restocks.</p>
+    </div>
+    <img src="assets/images/portraits/portrait-outdoor.jpg" alt="Bruja Thembi" class="connect-img" />
+  </div>
+</section>

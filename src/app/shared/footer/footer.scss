@@ -1,0 +1,86 @@
+footer {
+  background: #111e14;
+  color: rgba(250,249,246,0.55);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 4rem;
+  padding: 5rem 5rem 4rem;
+  border-bottom: 1px solid rgba(250,249,246,0.07);
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 500; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--white); display: block;
+  margin-bottom: 0.8rem;
+}
+.footer-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem; font-style: italic; color: var(--peach);
+  margin-bottom: 1.5rem; font-weight: 300;
+}
+.footer-contact {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  a, span {
+    font-size: 0.78rem; font-weight: 300; color: rgba(250,249,246,0.45);
+    transition: color 0.3s; letter-spacing: 0.04em;
+  }
+  a:hover { color: var(--peach); }
+}
+
+.footer-nav-col {
+  h4 {
+    font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--peach); margin-bottom: 1.2rem;
+  }
+  ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  a {
+    font-size: 0.78rem; font-weight: 300; color: rgba(250,249,246,0.45);
+    transition: color 0.3s;
+    &:hover { color: var(--white); }
+  }
+}
+
+.footer-banking-col {
+  h4 {
+    font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--peach); margin-bottom: 1.2rem;
+  }
+}
+.banking-mini {
+  border: 1px solid rgba(250,249,246,0.08);
+}
+.b-row {
+  display: flex; justify-content: space-between;
+  padding: 0.6rem 0.9rem; border-bottom: 1px solid rgba(250,249,246,0.06);
+  font-size: 0.72rem;
+  &:last-child { border-bottom: none; }
+  span:first-child { color: rgba(250,249,246,0.35); font-weight: 300; }
+  span:last-child  { color: var(--white); font-weight: 400; }
+}
+
+.footer-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.6rem 5rem;
+  p { font-size: 0.65rem; letter-spacing: 0.12em; color: rgba(250,249,246,0.25); }
+}
+.footer-brand-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem; letter-spacing: 0.24em; color: rgba(250,249,246,0.2);
+}
+
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem; padding: 4rem 2rem 3rem;
+  }
+  .footer-brand-col { grid-column: span 2; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem 2rem; }
+}
+@media (max-width: 540px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-brand-col { grid-column: span 1; }
+}

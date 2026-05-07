@@ -1,0 +1,192 @@
+<div class="svc-hero">
+    <div class="hero-left">
+        <span class="hero-tag">Sessions · Programs · Classes</span>
+        <h1 class="hero-title">The Work<br>of a <em>Bruja</em></h1>
+        <p class="hero-sub">Four distinct modalities. One integrated system — rooted in body wisdom, ancestral
+            knowledge, and measurable energetic transformation.</p>
+    </div>
+    <div class="hero-img"><img src="assets/images/portraits/portrait-couch.jpg" alt="Bruja Thembi" /></div>
+</div>
+
+<nav class="svc-nav">
+    <a (click)="setTab('tarot')" [class.active]="activeTab==='tarot'">01 — Tarot Readings</a>
+    <a (click)="setTab('breathwork')" [class.active]="activeTab==='breathwork'">02 — Breathwork</a>
+    <a (click)="setTab('umbilini')" [class.active]="activeTab==='umbilini'">03 — Umbilini</a>
+    <a (click)="setTab('cartomancy')" [class.active]="activeTab==='cartomancy'">04 — Spinal Cartomancy</a>
+    <a routerLink="/contact">Book & Pay</a>
+</nav>
+
+<!-- TAROT -->
+@if (activeTab==='tarot') {
+<section id="readings" class="svc-section">
+    <div class="svc-content reveal">
+        <span class="eyebrow">Service 01</span>
+        <h2 class="sec">Tarot <em>Readings</em></h2>
+        <div class="divider"></div>
+        <p class="body-text">Sessions that reflect the movement of life force. Each reading comes with a full written
+            transcript for reflection and later reference.</p>
+        <ul class="price-table">
+            <li>
+                <div><span class="price-name">5-Question Recorded Reading</span><span class="price-note">20 min · audio
+                        + transcript</span></div>
+                <span class="price-amt">R500</span>
+            </li>
+            <li>
+                <div><span class="price-name">8-Question Recorded Reading</span><span class="price-note">30 min · audio
+                        + transcript</span></div>
+                <span class="price-amt">R600</span>
+            </li>
+            <li>
+                <div><span class="price-name">60-Minute Live Call Session</span><span class="price-note">Zoom or Google
+                        Meets · transcript included</span></div>
+                <span class="price-amt">R800</span>
+            </li>
+        </ul>
+        <div class="book-note"><strong>To Book:</strong> Submit your name, questions, and proof of payment to WhatsApp
+            <strong>079-357-4091</strong></div>
+    </div>
+    <div class="svc-img reveal d1"><img src="assets/images/portraits/portrait-warm.jpg" alt="Reading session" /></div>
+</section>
+}
+
+<!-- BREATHWORK -->
+@if (activeTab==='breathwork') {
+<section id="breathwork" class="svc-section dark">
+    <div class="svc-content reveal">
+        <span class="eyebrow lt">Service 02</span>
+        <h2 class="sec lt">Breathwork <em>Containers</em></h2>
+        <div class="divider lt"></div>
+        <p class="body-text lt">Breathwork that builds and strengthens life force. Each container focuses on unlocking
+            hormones as the body's own medicine.</p>
+        <ul class="price-table lt">
+            <li>
+                <div><span class="price-name">60-Minute Breathwork Reset</span><span class="price-note">Monthly
+                        container</span></div>
+                <span class="price-amt">R600</span>
+            </li>
+            <li>
+                <div><span class="price-name">Guided Audio — Single Element</span><span class="price-note">Air · Water ·
+                        Fire · Earth · Ether</span></div>
+                <span class="price-amt">R350</span>
+            </li>
+            <li>
+                <div><span class="price-name">Full 40-Minute Reset Link</span><span class="price-note">Downloadable
+                        guided audio</span></div>
+                <span class="price-amt">R600</span>
+            </li>
+            <li>
+                <div><span class="price-name">6-Week Breathing Programme</span><span class="price-note">R2,000 deposit ·
+                        R1,500 × 2</span></div>
+                <span class="price-amt">R5,000</span>
+            </li>
+        </ul>
+        <div class="book-note lt"><strong>Enrollment:</strong> Apr 19 – May 3 · <strong>Cycle:</strong> May 10 – June
+            2026</div>
+    </div>
+    <div class="svc-img-stack reveal d1">
+        <img src="assets/images/bulletin/vid-breath.jpg" alt="Breathwork promo" class="top-img" />
+        <img src="assets/images/portraits/portrait-studio.jpg" alt="Studio" class="btm-img" />
+    </div>
+</section>
+}
+
+<!-- UMBILINI -->
+@if (activeTab==='umbilini') {
+<section id="umbilini" class="svc-section">
+    <div class="svc-content reveal">
+        <span class="eyebrow">Service 03</span>
+        <h2 class="sec">6-Week Umbilini <em>Breathing</em></h2>
+        <div class="divider"></div>
+        <p class="body-text">Reorients the body according to the four cardinal directions and the seven vortexes.
+            Dissolves <em>Isikhakhane</em> — the residue of unfinished business blocking your <em>uMoya</em>
+            (Spirit/Breath).</p>
+        <div class="chakra-list">
+            @for (c of chakras; track c.num) {
+            <div class="chakra-row">
+                <span class="c-n">{{c.num}}</span>
+                <span class="c-name">{{c.name}}</span>
+                <span class="c-desc">{{c.desc}}</span>
+            </div>
+            }
+        </div>
+        <ul class="price-table" style="margin-top:2rem">
+            <li>
+                <div><span class="price-name">Registration Deposit</span></div><span class="price-amt">R2,000</span>
+            </li>
+            <li>
+                <div><span class="price-name">Second Payment</span></div><span class="price-amt">R1,500</span>
+            </li>
+            <li>
+                <div><span class="price-name">Third Payment</span></div><span class="price-amt">R1,500</span>
+            </li>
+            <li>
+                <div><span class="price-name">Total Investment</span></div><span class="price-amt">R5,000</span>
+            </li>
+        </ul>
+    </div>
+    <div class="svc-img reveal d1"><img src="assets/images/portraits/portrait-red-bg.jpg" alt="Bruja Thembi" /></div>
+</section>
+}
+
+<!-- CARTOMANCY -->
+@if (activeTab==='cartomancy') {
+<section id="cartomancy" class="svc-section peach">
+    <div class="svc-img reveal"><img src="assets/images/portraits/portrait-outdoor.jpg" alt="Spinal Cartomancy" /></div>
+    <div class="svc-content reveal d1">
+        <span class="eyebrow dk">Service 04</span>
+        <h2 class="sec">Spinal <em>Cartomancy</em></h2>
+        <div class="divider dk"></div>
+        <p class="body-text">A 6-month professional container — 24 classes. The spine is the antenna of the human body.
+            This framework teaches divination from the marrow up.</p>
+        <div class="pillars-grid">
+            @for (p of pillars; track p.num) {
+            <div class="pillar-card">
+                <span class="p-num">{{p.num}}</span>
+                <h4>{{p.title}}</h4>
+                <p>{{p.desc}}</p>
+            </div>
+            }
+        </div>
+        <div class="enrol-box">
+            <h4>Enrollment & Pricing</h4>
+            <div class="e-row"><span>Enrollment Window</span><span>4 May – 16 May</span></div>
+            <div class="e-row"><span>Launch</span><span>June 2026 · 6 Months · 24 Classes</span></div>
+            <div class="e-row"><span>Registration Deposit</span><span>R2,500</span></div>
+            <div class="e-row"><span>Monthly Investment</span><span>R1,500 / month</span></div>
+        </div>
+    </div>
+</section>
+}
+
+<!-- GALLERY -->
+<div class="gallery-strip reveal">
+    <div class="g-img img-fill"><img src="assets/images/portraits/portrait-warm.jpg" alt="" /></div>
+    <div class="g-img img-fill"><img src="assets/images/portraits/portrait-pool.jpg" alt="" /></div>
+    <div class="g-img img-fill"><img src="assets/images/portraits/portrait-airport.jpg" alt="" /></div>
+    <div class="g-img img-fill"><img src="assets/images/portraits/portrait-event.jpg" alt="" /></div>
+</div>
+
+<!-- BOOKING BANNER -->
+<div class="booking-banner">
+    <div class="reveal">
+        <span class="eyebrow lt">How to Book</span>
+        <h2 class="sec lt">Ready to <em>Begin?</em></h2>
+        <div class="divider lt"></div>
+        <p class="body-text lt">Send your name, service, and questions via WhatsApp with proof of payment. Sessions
+            confirmed once payment reflects.</p>
+        <a routerLink="/contact" class="btn-primary" style="margin-top:2rem;display:inline-block;">Contact Thembi</a>
+    </div>
+    <div class="bank-cards reveal d1">
+        <div class="bank-card">
+            <h4>Sessions & Products</h4>
+            <div class="b-r"><span>Capitec Bank</span></div>
+            <div class="b-r"><span>Account</span><span>152 765 3365</span></div>
+            <div class="b-r"><span>Name</span><span>Ms. T.E. Molaba</span></div>
+        </div>
+        <div class="bank-card" style="margin-top:1rem">
+            <h4>Programme Enrollment</h4>
+            <div class="b-r"><span>Capitec Bank</span></div>
+            <div class="b-r"><span>Account</span><span>152 765 3364</span></div>
+        </div>
+    </div>
+</div>

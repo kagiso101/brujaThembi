@@ -1,0 +1,82 @@
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem 3.5rem;
+  background: rgba(250,249,246,0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+  height: var(--nav-h);
+
+  &.scrolled {
+    border-bottom-color: var(--border);
+    background: rgba(250,249,246,0.98);
+  }
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--green-deep); text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex; gap: 2rem; list-style: none;
+  align-items: center;
+
+  a {
+    font-size: 0.68rem; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(26,46,32,0.65); text-decoration: none;
+    transition: color 0.3s;
+    &:hover, &.active { color: var(--green-deep); }
+  }
+
+  .nav-cta {
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--green-deep);
+    color: var(--green-deep) !important;
+    transition: background 0.3s, color 0.3s;
+    &:hover { background: var(--green-deep); color: var(--white) !important; }
+  }
+}
+
+.burger {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px;
+
+  span {
+    display: block; width: 24px; height: 1.5px;
+    background: var(--green-deep);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &.open {
+    span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+}
+
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 1.5rem; }
+  .burger { display: flex; }
+  .nav-links {
+    position: fixed; top: var(--nav-h); left: 0; right: 0;
+    background: var(--white); flex-direction: column; gap: 0;
+    padding: 1rem 0; border-bottom: 1px solid var(--border);
+    transform: translateY(-100%); opacity: 0;
+    pointer-events: none; transition: transform 0.35s ease, opacity 0.35s;
+
+    &.open {
+      transform: translateY(0); opacity: 1; pointer-events: all;
+    }
+
+    li { width: 100%; }
+    a { display: block; padding: 1rem 2rem; font-size: 0.72rem; }
+    .nav-cta { margin: 0.5rem 2rem; display: block; text-align: center; }
+  }
+}

@@ -1,0 +1,183 @@
+<div class="contact-hero">
+  <div class="hero-bg"><img src="assets/images/portraits/hero-red.jpg" alt="Bruja Thembi" /></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <span class="hero-tag">Get in Touch</span>
+      <h1 class="hero-title">Let's Begin<br>Your <em>Journey</em></h1>
+    </div>
+    <div class="hero-right">
+      <a href="https://wa.me/27793574091" class="quick-link">
+        <div class="ql-icon">💬</div>
+        <div><span class="ql-lbl">WhatsApp — Fastest Response</span><span class="ql-val">079-357-4091</span></div>
+      </a>
+      <a href="#booking" class="quick-link">
+        <div class="ql-icon">📅</div>
+        <div><span class="ql-lbl">Booking Form</span><span class="ql-val">Fill in below ↓</span></div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="booking" class="contact-main">
+  <div class="form-panel reveal">
+    <span class="eyebrow">Book a Session</span>
+    <h2 class="sec">Send Bruja<br>a <em>Message</em></h2>
+    <div class="divider"></div>
+    <p class="body-text">Fill in the form and Bruja will respond within 24 hours. For fastest response, WhatsApp
+      directly on 079-357-4091.</p>
+    <form class="booking-form" (ngSubmit)="handleSubmit()">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" [(ngModel)]="form.firstName"
+            name="firstName" placeholder="Thandi" required /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" [(ngModel)]="form.lastName" name="lastName"
+            placeholder="Molefe" required /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" [(ngModel)]="form.email" name="email"
+          placeholder="thandi@example.com" required /></div>
+      <div class="form-group"><label>WhatsApp Number</label><input type="tel" [(ngModel)]="form.phone" name="phone"
+          placeholder="+27 82 000 0000" /></div>
+      <div class="form-group">
+        <label>Service of Interest</label>
+        <select [(ngModel)]="form.service" name="service" required>
+          <option value="" disabled selected>Select a service…</option>
+          <optgroup label="Tarot Readings">
+            <option>5-Question Recorded Reading — R500</option>
+            <option>8-Question Recorded Reading — R600</option>
+            <option>60-Minute Live Call Session — R800</option>
+          </optgroup>
+          <optgroup label="Breathwork">
+            <option>60-Minute Breathwork Reset — R600</option>
+            <option>6-Week Breathing Programme — R5,000</option>
+          </optgroup>
+          <optgroup label="Programmes">
+            <option>6-Week Umbilini Breathing Programme — R5,000</option>
+            <option>Spinal Cartomancy — 6 Months — from R2,500</option>
+          </optgroup>
+          <optgroup label="Apothecary">
+            <option>Aura Care Box — R1,000</option>
+            <option>Individual Products</option>
+          </optgroup>
+          <optgroup label="Corporate">
+            <option>Corporate Wellness Enquiry</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Questions or Message</label>
+        <textarea [(ngModel)]="form.message" name="message"
+          placeholder="For readings: list your questions here. For other services: tell Bruja what you're hoping to work on…"></textarea>
+        <span class="form-note">For recorded readings, list each question on a new line. Send proof of payment via
+          WhatsApp after booking.</span>
+      </div>
+      <button type="submit" class="btn-dark">Send via WhatsApp</button>
+    </form>
+    <div class="wa-alt"><strong>Prefer WhatsApp directly?</strong> Save 079-357-4091, then send your name, service,
+      questions, and proof of payment. Sessions confirmed once payment reflects.</div>
+  </div>
+  <div class="contact-img-panel reveal d1">
+    <img src="assets/images/portraits/portrait-warm.jpg" alt="Bruja Thembi" />
+    <div class="img-caption">
+      <p>"I want people to come out of sessions feeling renewed, transformed, and recharged."</p>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-section">
+  <div class="how-steps reveal">
+    <span class="eyebrow lt">How It Works</span>
+    <h2 class="sec lt">From First Message<br>to <em>Session</em></h2>
+    <div class="divider lt"></div>
+    <div class="steps">
+      @for (s of steps; track s.num) {
+      <div class="step">
+        <span class="s-num">{{s.num}}</span>
+        <div>
+          <h4>{{s.title}}</h4>
+          <p>{{s.desc}}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="how-imgs reveal d1">
+    <div class="h-main img-fill"><img src="assets/images/portraits/portrait-event.jpg" alt="Bruja Thembi" /></div>
+    <div class="h-accent img-fill"><img src="assets/images/portraits/portrait-studio.jpg" alt="Bruja Thembi studio" />
+    </div>
+  </div>
+</div>
+
+<!-- BANKING -->
+<div class="banking-section">
+  <div class="reveal">
+    <span class="eyebrow dk">Payment Details</span>
+    <h2 class="sec">Banking <em>Details</em></h2>
+    <div class="divider dk"></div>
+    <div class="bank-card">
+      <div class="bc-header">
+        <h4>Sessions, Products & Apothecary</h4><span>General payments</span>
+      </div>
+      <div class="bc-rows">
+        <div class="bc-row"><span>Bank</span><span>Capitec Bank</span></div>
+        <div class="bc-row"><span>Account Number</span><span>152 765 3365</span></div>
+        <div class="bc-row"><span>Account Holder</span><span>Ms. T.E. Molaba</span></div>
+        <div class="bc-row"><span>Reference</span><span>Your Name + Service</span></div>
+      </div>
+    </div>
+    <div class="bank-card" style="margin-top:1rem">
+      <div class="bc-header">
+        <h4>Programme Enrollment</h4><span>Cartomancy & Umbilini deposits</span>
+      </div>
+      <div class="bc-rows">
+        <div class="bc-row"><span>Account Number</span><span>152 765 3364</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="reveal d1">
+    <span class="eyebrow dk">Terms of Service</span>
+    <h2 class="sec" style="font-size:1.8rem">What to Know<br>Before <em>Booking</em></h2>
+    <div class="divider dk"></div>
+    <div class="terms-list">
+      @for (t of terms; track t.num) {
+      <div class="term-row">
+        <span class="t-icon">{{t.num}}</span>
+        <p><strong>{{t.title}}:</strong> {{t.desc}}</p>
+      </div>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES STRIP -->
+<div class="svc-strip">
+  <span class="eyebrow">Not Sure Where to Start?</span>
+  <div class="strip-grid">
+    <a routerLink="/services" class="s-card"><span class="sc-num">01</span>
+      <h4>Tarot Readings</h4><span class="sc-price">From R500</span><span class="sc-arrow">View →</span>
+    </a>
+    <a routerLink="/services" class="s-card"><span class="sc-num">02</span>
+      <h4>Breathwork</h4><span class="sc-price">From R350</span><span class="sc-arrow">View →</span>
+    </a>
+    <a routerLink="/services" class="s-card"><span class="sc-num">03</span>
+      <h4>Spinal Cartomancy</h4><span class="sc-price">From R2,500</span><span class="sc-arrow">View →</span>
+    </a>
+    <a routerLink="/apothecary" class="s-card"><span class="sc-num">04</span>
+      <h4>Somatic Apothecary</h4><span class="sc-price">From R80</span><span class="sc-arrow">View →</span>
+    </a>
+  </div>
+</div>
+
+<!-- WARM CLOSE -->
+<div class="warm-close">
+  <div class="wc-img img-fill"><img src="assets/images/portraits/portrait-cafe.jpg" alt="Bruja Thembi" /></div>
+  <div class="wc-content">
+    <p class="close-quote">"I managed to evolve from a mindset of duality and separation to a state of <em>infinite
+        consciousness</em> where I feel whole and connected."</p>
+    <span class="close-sig">— Thembi Molaba · Yogi Bruja</span>
+    <div class="close-btns">
+      <a href="https://wa.me/27793574091" class="btn-primary">WhatsApp Bruja</a>
+      <a routerLink="/about" class="btn-ghost">Read Her Story</a>
+    </div>
+  </div>
+</div>

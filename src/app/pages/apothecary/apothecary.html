@@ -1,0 +1,198 @@
+<div class="apo-hero">
+  <div class="hero-img-panel"><img src="assets/images/products/herbs-hero.jpg" alt="Aura care herbs" /></div>
+  <div class="hero-text-panel">
+    <span class="h-tag">Somatic Apothecary</span>
+    <h1 class="h-title">Aura Care<br>that Meets<br>You <em>At Home</em></h1>
+    <p class="h-sub">Alternative holistic care in the comfort of your own space. Where ancient plant medicine meets
+      modern bio-energetic science.</p>
+    <div class="science-pill">
+      <p>"While steeping leaves up to 70% of minerals behind, consuming the whole ground herb in a capsule means you
+        ingest 100% of available nutrients."</p>
+      <cite>The Science Behind Bruja's Blend</cite>
+    </div>
+  </div>
+</div>
+
+<nav class="prod-nav">
+  <a (click)="setTab('capsules')" [class.active]="activeTab==='capsules'">Capsules</a>
+  <a (click)="setTab('steaming')" [class.active]="activeTab==='steaming'">Steaming Blend</a>
+  <a (click)="setTab('skincare')" [class.active]="activeTab==='skincare'">Skincare</a>
+  <a (click)="setTab('box')" [class.active]="activeTab==='box'">Aura Care Box</a>
+  <a (click)="setTab('stories')" [class.active]="activeTab==='stories'">Client Results</a>
+</nav>
+
+<!-- CAPSULES -->
+@if (activeTab==='capsules') {
+<section class="cap-section">
+  <div class="cap-content reveal">
+    <span class="eyebrow lt">Product 01</span>
+    <h2 class="sec lt">Herbal <em>Capsules</em></h2>
+    <div class="divider lt"></div>
+    <p class="body-text lt">Three foundational capsule formulations — each targeting a different layer of physical and
+      energetic health.</p>
+    <div class="ing-list">
+      @for (i of capsuleIngredients; track i.name) {
+      <div class="ing-row">
+        <span class="ing-glyph">{{i.glyph}}</span>
+        <div>
+          <h4>{{i.name}}</h4>
+          <p>{{i.desc}}</p>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="price-strip">
+      <div class="ps-item"><span class="ps-amt">R80</span><span class="ps-lbl">30 Capsules</span></div>
+      <div class="ps-item"><span class="ps-amt">R180</span><span class="ps-lbl">90 Capsules</span></div>
+      <div class="ps-item"><span class="ps-amt">R80</span><span class="ps-lbl">Per variety</span></div>
+    </div>
+  </div>
+  <div class="cap-imgs">
+    <div class="cap-img-top img-fill reveal d1"><img src="assets/images/products/capsules-rows.jpg"
+        alt="Capsule bottles" /></div>
+    <div class="cap-img-btm img-fill reveal d2"><img src="assets/images/products/capsules-stock.jpg"
+        alt="Capsule stock" /></div>
+  </div>
+</section>
+}
+
+<!-- STEAMING -->
+@if (activeTab==='steaming') {
+<section class="steam-section">
+  <div class="steam-imgs reveal">
+    <img src="assets/images/products/steam-blend.jpg" alt="Steaming blend" class="s-main" />
+    <img src="assets/images/products/botanicals-warm.jpg" alt="Botanicals" class="s-s1" />
+    <img src="assets/images/products/herbs-styled.jpg" alt="Herbs" class="s-s2" />
+  </div>
+  <div class="steam-content reveal d1">
+    <span class="eyebrow dk">Product 02</span>
+    <h2 class="sec">Medicinal <em>Steaming Blend</em></h2>
+    <div class="divider dk"></div>
+    <p class="body-text">Bruja's signature home steaming therapy. 6 herbs and roots targeting PCOS, eczema,
+      endometriosis, uterine imbalances, and spasmodic pain including menstrual cramps.</p>
+    <div class="herb-grid">
+      @for (h of herbs; track h.name) {
+      <div class="herb-card">
+        <span class="herb-latin">{{h.latin}}</span>
+        <h4>{{h.name}}</h4>
+        <p>{{h.desc}}</p>
+      </div>
+      }
+    </div>
+    <div class="steam-price"><span class="sp-amt">R469</span><span class="sp-note">per bag · sold separately from Aura
+        Care Box</span></div>
+  </div>
+</section>
+}
+
+<!-- SKINCARE -->
+@if (activeTab==='skincare') {
+<section class="skincare-section">
+  <div class="reveal">
+    <span class="eyebrow lt">Product 03</span>
+    <h2 class="sec lt">The Skincare <em>Line</em></h2>
+    <div class="divider lt"></div>
+    <p class="body-text lt" style="max-width:600px">Plant-based formulations designed not only for physical cleansing —
+      but as spiritual tools for removing negative energy, promoting inner healing, and emotional balance.</p>
+  </div>
+  <div class="skincare-grid reveal">
+    @for (s of skincare; track s.name) {
+    <div class="sk-card">
+      <span class="sk-cat">{{s.cat}}</span>
+      <h3>{{s.name}}</h3>
+      <p>{{s.desc}}</p>
+      <span class="sk-price">{{s.price}}</span>
+    </div>
+    }
+  </div>
+  <div class="serum-strip reveal">
+    <img src="assets/images/products/serums-dark.jpg" alt="Serums" />
+    <img src="assets/images/products/serum-cream.jpg" alt="Skincare products" />
+  </div>
+</section>
+}
+
+<!-- AURA BOX -->
+@if (activeTab==='box') {
+<section class="box-section">
+  <div class="box-imgs">
+    <div class="box-img-top img-fill reveal"><img src="assets/images/products/box-branded.jpg" alt="Aura Care Box" />
+    </div>
+    <div class="box-img-btm img-fill reveal d1"><img src="assets/images/products/box-tissue.jpg" alt="Box packaging" />
+    </div>
+  </div>
+  <div class="box-content reveal d1">
+    <span class="eyebrow dk">The Full Kit</span>
+    <h2 class="sec">Aura Care <em>Box</em></h2>
+    <div class="divider dk"></div>
+    <p class="body-text">Everything you need for a complete home aura care ritual — curated, packed, and couriered to
+      your door.</p>
+    <ul class="box-includes">
+      @for (item of boxContents; track item) {
+      <li>
+        <div class="b-dot"></div><span>{{item}}</span>
+      </li>
+      }
+    </ul>
+    <div class="box-price-block">
+      <span class="bp-total">R1,000</span>
+      <div>
+        <p class="bp-note">Includes courier · WhatsApp 079-357-4091</p>
+      </div>
+    </div>
+  </div>
+</section>
+}
+
+<!-- CLIENT STORIES -->
+@if (activeTab==='stories') {
+<section class="stories-section">
+  <div class="reveal">
+    <span class="eyebrow">Client Results</span>
+    <h2 class="sec">What the <em>Products Do</em></h2>
+    <div class="divider"></div>
+    <p class="body-text" style="max-width:600px">Unsolicited WhatsApp messages from clients experiencing real,
+      measurable shifts.</p>
+  </div>
+  <div class="testi-layout">
+    <div class="testi-screenshots reveal">
+      <img src="assets/images/products/testi-bp.jpg" alt="Blood pressure testimonial" />
+      <img src="assets/images/products/testi-skin.jpg" alt="Skin healing testimonial" />
+    </div>
+    <div class="testi-quotes reveal d1">
+      <div class="t-block">
+        <p>"My colleague at work says hibiscus tea helped her blood pressure come down when even pharmaceuticals were
+          not working."</p><cite>Client feedback — Hibiscus Protocol</cite>
+      </div>
+      <div class="t-block">
+        <p>"The cysts in my womb have disappeared — skin is slowly clearing up."</p><cite>Client feedback — Steaming
+          Blend & Capsules</cite>
+      </div>
+      <div class="t-block">
+        <p>"She has been using your steaming blend for the third month now. She used to have painful cramps — she's
+          sleeping through the night now."</p><cite>Client feedback — Aura Care Box</cite>
+      </div>
+    </div>
+  </div>
+</section>
+}
+
+<!-- FULL PRICE LIST -->
+<div class="order-section">
+  <div class="reveal">
+    <span class="eyebrow">All Products</span>
+    <h2 class="sec">Full Price <em>List</em></h2>
+    <div class="divider"></div>
+    <p class="body-text">Order via WhatsApp — send your name, products, and proof of payment. Courier: R150 (included in
+      Aura Care Box).</p>
+    <p style="margin-top:1rem;font-size:0.78rem;color:var(--muted)"><strong
+        style="color:var(--green-deep)">WhatsApp:</strong> 079-357-4091 · <strong
+        style="color:var(--green-deep)">Capitec:</strong> 152 765 3365 · Ms. T.E. Molaba</p>
+    <a routerLink="/contact" class="btn-dark" style="margin-top:2rem;display:inline-block">Order Now</a>
+  </div>
+  <ul class="price-table reveal d1">
+    @for (p of allPrices; track p.name) {
+    <li><span class="price-name">{{p.name}}</span><span class="price-amt">{{p.price}}</span></li>
+    }
+  </ul>
+</div>
