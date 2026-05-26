@@ -1,19 +1,58 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
+
+interface VideoCard {
+  videoId: string;
+  title: string;
+  meta: string;
+  desc: string;
+  customThumb?: string;
+}
 
 @Component({
   selector: 'app-bulletin',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './bulletin.html',
   styleUrl: './bulletin.scss',
 })
 export class Bulletin implements AfterViewInit {
   private reveal = inject(ScrollRevealService);
-  videos = [
-    { img: 'assets/images/bulletin/vid-auric.jpg', title: '14 Signs You\'re Losing Auric Light', meta: 'Aura Health · Latest', duration: 'YouTube', desc: 'Chronic fatigue, brain fog, and social withdrawal — learn the 14 warning signs and what to do about each.' },
-    { img: 'assets/images/bulletin/vid-breath.jpg', title: 'April Grid-Reset Breathwork Session', meta: 'Breathwork · April 2026', duration: 'Session', desc: 'Full live session recording from the monthly group reset. Follow along or reference before booking.' },
-    { img: 'assets/images/bulletin/vid-class.jpg', title: 'Breathwork Class — Group 4 Now Open', meta: 'Breathwork · Enrollment Open', duration: 'Programme', desc: 'Alternative holistic care that meets you in the comfort of your own home. Group 4 opens April 2026.' },
-    { img: 'assets/images/bulletin/vid-carto.jpg', title: 'Intuitive Card Reading — The 6 Month Journey', meta: 'Cartomancy · Enrolment May 4–16', duration: 'Programme', desc: 'An introduction to the Spinal Cartomancy professional container — 24 classes across 6 months.' },
+  private sanitizer = inject(DomSanitizer);
+
+  playingId: string | null = null;
+  playingUrl: SafeResourceUrl | null = null;
+
+  featured: VideoCard = {
+    videoId: 'NMzNm02pOfc',
+    title: 'Thought Transmission & Ancestry — Part 2',
+    meta: 'Bruja TheOracle · Featured',
+    desc: 'Wrapping the two-parter. How to tell ancestral transmissions apart from interpersonal telepathy, why your desire becomes a signal, and how people who catch your "bait" mentally are the ones already aligned to your frequency — including the free will question.',
+    customThumb: 'assets/images/bulletin/image3.png',
+  };
+
+  videos: VideoCard[] = [
+    {
+      videoId: '2hzrvKPJalA',
+      title: 'Thought Transmission & Ancestry — Part 1',
+      meta: 'Bruja TheOracle · Part 1',
+      desc: 'The foundation. How to know which thoughts are yours, which are coming from your guides, and which are landing from other minds — plus the ascent of life force from the base of the spine upward as the prerequisite for mobilising synchronicity.',
+      customThumb: 'assets/images/bulletin/image2.png',
+    },
+    {
+      videoId: 'UVDucYgbxcE',
+      title: 'What Aura Care Did For Me — Kela\'s Story',
+      meta: 'Bruja TheOracle · Client Story',
+      desc: 'After COVID grief, suicidal ideation, and exhausting every modality from regression to grounding, 90 days of breathwork cleared Kela\'s water memory. What shifted in her body, her work, and the way strangers received her.',
+      customThumb: 'assets/images/bulletin/image.png',
+    },
+    {
+      videoId: 'mkTemTeJFVc',
+      title: 'Breaking Generational Patterns with Aura Work',
+      meta: 'Bruja TheOracle · Inner Work',
+      desc: 'Generational patterns travel through blood, not the rituals around it. How spinal breathing rewrites the body at the molecular level — and the bloodline-wide effects: marriages aligning, fibroids dissolving, money portals opening for mothers and aunts too.',
+    },
   ];
 
   articles = [
@@ -29,8 +68,25 @@ export class Bulletin implements AfterViewInit {
     { img: 'assets/images/bulletin/wa-dream.jpg', tag: 'Dreams · Guides', title: 'Guides in the Morning Choir', quote: '"I got woken up in the AM by a bird singing chirping — there\'s two of them that she loved and one other came — again frequently for your work."', outcome: '↑ Ongoing dream communication confirmed post-reading' },
   ];
 
-  ngAfterViewInit() { setTimeout(() => this.reveal.init(), 100); }
-  activeTab = 'tarot';
-  setTab(t: string) { this.activeTab = t; }
+  thumb(v: VideoCard): string {
+    return v.customThumb || `https://i.ytimg.com/vi/${v.videoId}/maxresdefault.jpg`;
+  }
 
+  onThumbError(event: Event, v: VideoCard) {
+    if (v.customThumb) return;
+    const img = event.target as HTMLImageElement;
+    if (!img.src.includes('hqdefault')) {
+      img.src = `https://i.ytimg.com/vi/${v.videoId}/hqdefault.jpg`;
+    }
+  }
+
+  playVideo(id: string, event: Event) {
+    event.stopPropagation();
+    this.playingId = id;
+    this.playingUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`
+    );
+  }
+
+  ngAfterViewInit() { setTimeout(() => this.reveal.init(), 100); }
 }

@@ -35,6 +35,24 @@ export class Services implements AfterViewInit {
 
   setTab(tab: string) {
     this.activeTab = tab;
-    setTimeout(() => this.reveal.init(), 50);
+    setTimeout(() => {
+      this.reveal.init();
+      this.scrollToActiveSection();
+    }, 50);
+  }
+
+  private scrollToActiveSection() {
+    const section = document.querySelector('.svc-section') as HTMLElement | null;
+    const svcNav = document.querySelector('.svc-nav') as HTMLElement | null;
+    if (!section || !svcNav) return;
+
+    const mainNavH = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--nav-h')
+    ) || 80;
+
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const targetY = sectionTop - mainNavH - svcNav.offsetHeight;
+
+    window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
   }
 }

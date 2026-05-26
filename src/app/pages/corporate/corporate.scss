@@ -294,57 +294,167 @@
     padding: 7rem 5rem;
 }
 
-.testi-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+.testi-carousel {
+    position: relative;
     margin-top: 3.5rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 4rem;
 }
 
-.t-card {
-    background: rgba(255, 255, 255, 0.03);
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    width: 100%;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+}
+
+.chat-card {
+    background: #0e1f15;
     border: 1px solid rgba(250, 249, 246, 0.08);
     overflow: hidden;
-    transition: border-color 0.4s;
-
-    &:hover {
-        border-color: rgba(242, 217, 200, 0.25);
-    }
-
-    img {
-        width: 100%;
-        aspect-ratio: 9/14;
-        object-fit: cover;
-        object-position: top;
-        display: block;
-    }
+    display: flex;
+    flex-direction: column;
+    min-height: 520px;
 }
 
-.t-cap {
-    padding: 1.5rem;
-    border-top: 1px solid rgba(250, 249, 246, 0.07);
+.chat-header {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid rgba(250, 249, 246, 0.07);
+    background: rgba(0, 0, 0, 0.25);
 }
 
-.t-tag {
+.chat-tag {
     font-size: 0.6rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--peach);
     display: block;
-    margin-bottom: 0.6rem;
 }
 
-.t-cap p {
-    font-family: 'Cormorant Garamond', serif;
+.chat-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.bubble {
+    max-width: 80%;
+    padding: 0.7rem 0.9rem 0.5rem;
+    border-radius: 12px;
+    position: relative;
+    word-wrap: break-word;
+
+    p {
+        font-size: 0.82rem;
+        font-weight: 300;
+        line-height: 1.5;
+        color: rgba(250, 249, 246, 0.92);
+        margin: 0;
+        white-space: pre-wrap;
+    }
+}
+
+.bubble-time {
+    display: block;
+    font-size: 0.6rem;
+    color: rgba(250, 249, 246, 0.4);
+    margin-top: 0.3rem;
+    text-align: right;
+    letter-spacing: 0.05em;
+}
+
+.bubble-them {
+    align-self: flex-start;
+    background: #1f2c25;
+    border-bottom-left-radius: 2px;
+}
+
+.bubble-me {
+    align-self: flex-end;
+    background: #054d3c;
+    border-bottom-right-radius: 2px;
+
+    p {
+        color: rgba(250, 249, 246, 0.95);
+    }
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 1px solid rgba(242, 217, 200, 0.25);
+    color: var(--peach);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.65;
-    color: rgba(250, 249, 246, 0.75);
+    transition: all 0.3s;
+    z-index: 3;
+
+    &:hover {
+        background: rgba(242, 217, 200, 0.1);
+        border-color: var(--peach);
+    }
+
+    &.prev {
+        left: 0;
+    }
+
+    &.next {
+        right: 0;
+    }
+
+    span {
+        display: block;
+        line-height: 1;
+    }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 28px;
+    height: 2px;
+    background: rgba(250, 249, 246, 0.15);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    padding: 0;
+
+    &.active {
+        background: var(--peach);
+    }
+
+    &:hover {
+        background: rgba(242, 217, 200, 0.5);
+    }
 }
 
 .big-pull {
-    margin-top: 4rem;
+    margin: 4rem auto 0;
     padding: 2.5rem;
     border-left: 2px solid var(--peach);
     background: rgba(242, 217, 200, 0.05);
@@ -398,7 +508,7 @@
     flex-wrap: wrap;
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
     .hero-content {
         grid-template-columns: 1fr;
         padding: 0 2rem 4rem;
@@ -428,8 +538,22 @@
         grid-template-columns: 1fr;
     }
 
-    .testi-grid {
-        grid-template-columns: 1fr;
+    .testi-carousel {
+        padding: 0 2.5rem;
+        max-width: 100%;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .bubble {
+        max-width: 85%;
+
+        p {
+            font-size: 0.78rem;
+        }
     }
 
     .corp-cta {

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apothecary',
@@ -8,8 +9,8 @@ import { ScrollRevealService } from '../../services/scroll-reveal.service';
   styleUrl: './apothecary.scss',
 })
 export class Apothecary implements AfterViewInit {
-    private reveal = inject(ScrollRevealService);
-
+  private reveal = inject(ScrollRevealService);
+  private router = inject(Router);
   activeTab = 'capsules';
 
   capsuleIngredients = [
@@ -56,5 +57,30 @@ export class Apothecary implements AfterViewInit {
   ];
 
   ngAfterViewInit() { setTimeout(() => this.reveal.init(), 100); }
-  setTab(tab: string) { this.activeTab = tab; setTimeout(() => this.reveal.init(), 50); }
+  setTab(tab: string) {
+    this.activeTab = tab;
+    setTimeout(() => {
+      this.reveal.init();
+      this.scrollToActiveSection();
+    }, 50);
+  }
+
+  private scrollToActiveSection() {
+    const prodNav = document.querySelector('.prod-nav') as HTMLElement | null;
+    const section = document.querySelector('.prod-nav ~ section') as HTMLElement | null;
+    if (!prodNav || !section) return;
+
+    const mainNavH = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--nav-h')
+    ) || 80;
+
+    const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+    const targetY = sectionTop - mainNavH - prodNav.offsetHeight;
+
+    window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+  }
+
+  navigate() {
+    this.router.navigate(['/contact']);
+  }
 }

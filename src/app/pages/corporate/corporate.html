@@ -67,11 +67,51 @@
     <div class="divider lt"></div>
     <p class="body-text lt" style="max-width:560px">Real messages from real clients — unfiltered, unprompted, and unsolicited.</p>
   </div>
-  <div class="testi-grid reveal">
-    <div class="t-card"><img src="assets/images/corporate/corp-testi1.jpg" alt="Operations Manager promotion" /><div class="t-cap"><span class="t-tag">Career Breakthrough</span><p>"Today my boss came and announced she is promoting me to Operations Manager."</p></div></div>
-    <div class="t-card"><img src="assets/images/corporate/corp-testi2.jpg" alt="Top management" /><div class="t-cap"><span class="t-tag">Leadership Recognition</span><p>"Top management didn't think I wanted the challenge… they broke the news. They don't play."</p></div></div>
-    <div class="t-card"><img src="assets/images/corporate/corp-testi3.jpg" alt="Clarity" /><div class="t-cap"><span class="t-tag">Clarity & Stability</span><p>"I am finding myself especially writing things I have censored entries during my daily journaling."</p></div></div>
+
+  <div class="testi-carousel reveal"
+       (mouseenter)="pauseAutoplay()"
+       (mouseleave)="resumeAutoplay()">
+
+    <button class="carousel-arrow prev" (click)="prev()" aria-label="Previous testimonial">
+      <span>←</span>
+    </button>
+
+    <div class="carousel-viewport">
+      <div class="carousel-track" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
+        <div class="carousel-slide" *ngFor="let t of testimonials">
+          <div class="chat-card">
+            <div class="chat-header">
+              <span class="chat-tag">{{ t.tag }}</span>
+            </div>
+            <div class="chat-body">
+              <div *ngFor="let msg of t.messages"
+                   class="bubble"
+                   [class.bubble-them]="msg.sender === 'them'"
+                   [class.bubble-me]="msg.sender === 'me'">
+                <p>{{ msg.text }}</p>
+                <span class="bubble-time" *ngIf="msg.time">{{ msg.time }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-arrow next" (click)="next()" aria-label="Next testimonial">
+      <span>→</span>
+    </button>
+
+    <div class="carousel-dots">
+      <button
+        *ngFor="let t of testimonials; let i = index"
+        class="dot"
+        [class.active]="i === currentIndex"
+        (click)="goTo(i)"
+        [attr.aria-label]="'Go to testimonial ' + (i + 1)">
+      </button>
+    </div>
   </div>
+
   <div class="big-pull reveal">
     <blockquote>"I moved from being a senior specialist with no one reporting to me to leading a team of 13 people in less than a year. My productivity is off the roof. I am operating at peak performance."</blockquote>
     <cite>Corporate Client — Following Bruja Thembi Engagement</cite>
