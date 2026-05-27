@@ -622,18 +622,36 @@
     margin-top: 1.5rem;
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
     .bull-hero {
         grid-template-columns: 1fr;
         height: auto;
+        overflow: hidden;
     }
 
     .img-col {
         grid-template-rows: 220px 220px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .top-img,
+    .btm-img {
+        min-width: 0;
+        max-width: 100%;
     }
 
     .content-col {
         padding: 5rem 2rem 3rem;
+    }
+
+    .bull-social {
+        flex-wrap: wrap;
+    }
+
+    .social-btn {
+        padding: 0.65rem 1.1rem;
+        font-size: 0.62rem;
     }
 
     .cat-nav a {
