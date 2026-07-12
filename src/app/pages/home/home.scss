@@ -1,3 +1,42 @@
+/* ── DROP ANNOUNCEMENT ── */
+.drop-banner {
+    background: var(--green-mid);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.6rem 5rem;
+
+    .drop-label {
+        display: block;
+        font-size: 0.6rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--peach);
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+        font-weight: 300;
+        line-height: 1.7;
+        color: rgba(250, 249, 246, 0.75);
+        max-width: 640px;
+
+        strong {
+            color: var(--white);
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .drop-banner {
+        padding: 1.6rem 2rem;
+    }
+}
+
 /* ── HERO ── */
 .hero {
     min-height: 100vh;

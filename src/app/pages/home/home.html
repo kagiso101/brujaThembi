@@ -21,33 +21,52 @@
   </div>
 </section>
 
+<!-- DROP ANNOUNCEMENT -->
+<section class="drop-banner">
+  <div class="drop-banner-text">
+    <span class="drop-label">Bespoke Audio Readings — The Drop</span>
+    @if (drop.open) {
+    <p>A drop of {{drop.slotsPerDrop}} reading slots is <strong>live now</strong>. Custom card readings delivered
+      straight to your inbox — audio plus integration transcript.</p>
+    } @else {
+    <p>This drop is full. The next {{drop.slotsPerDrop}} slots go live {{drop.nextDropDate}} — join the Community
+      Mailing List to hear first.</p>
+    }
+  </div>
+  @if (drop.open) {
+  <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary">Secure Your Slot</a>
+  } @else {
+  <a routerLink="/services" class="btn-ghost">Learn More</a>
+  }
+</section>
+
 <!-- SERVICES STRIP -->
 <section class="services-strip">
   <div class="strip-item reveal" routerLink="/services">
     <span class="strip-num">01</span>
-    <h3>Tarot Readings</h3>
-    <p>Sessions that reflect the movement of life force. Transcript included.</p>
+    <h3>Bespoke Audio Readings</h3>
+    <p>Personal guidance on your exact questions — delivered to your inbox as audio plus a transcript you keep forever.</p>
     <span class="strip-price">From R500</span>
     <span class="strip-arrow">→</span>
   </div>
   <div class="strip-item reveal d1" routerLink="/services">
     <span class="strip-num">02</span>
-    <h3>Breathwork Containers</h3>
-    <p>Unlocking hormones as the body's own medicine.</p>
+    <h3>Somatic Breathwork Container</h3>
+    <p>A 6-week journey out of chronic stress and survival mode — back into calm, presence, and energy.</p>
     <span class="strip-price">From R350</span>
     <span class="strip-arrow">→</span>
   </div>
   <div class="strip-item reveal d2" routerLink="/services">
     <span class="strip-num">03</span>
-    <h3>Spinal Cartomancy</h3>
-    <p>6-month professional container. 24 classes.</p>
+    <h3>Card Reading Mastery Container</h3>
+    <p>A 6-month mentorship in deep cartomancy — read energy with precision, for personal or professional mastery.</p>
     <span class="strip-price">From R2,500</span>
     <span class="strip-arrow">→</span>
   </div>
   <div class="strip-item reveal d3" routerLink="/apothecary">
     <span class="strip-num">04</span>
     <h3>Somatic Apothecary</h3>
-    <p>Whole-herb capsules, steaming blends, and aura care products.</p>
+    <p>Whole-herb capsules, steaming blends, and aura care products — holistic care at home.</p>
     <span class="strip-price">From R80</span>
     <span class="strip-arrow">→</span>
   </div>

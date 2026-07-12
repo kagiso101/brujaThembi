@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
+import { BOOKING_FORM_URL, DREAM_VAULT_FORM_URL, DROP } from '../../shared/booking-links';
 
 @Component({
   selector: 'app-services',
@@ -10,7 +11,10 @@ import { ScrollRevealService } from '../../services/scroll-reveal.service';
   styleUrl: './services.scss',
 })
 export class Services implements AfterViewInit {
-  activeTab = 'tarot';
+  activeTab = 'readings';
+  bookingFormUrl = BOOKING_FORM_URL;
+  dreamVaultUrl = DREAM_VAULT_FORM_URL;
+  drop = DROP;
   private reveal = inject(ScrollRevealService);
 
   chakras = [

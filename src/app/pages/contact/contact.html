@@ -15,6 +15,12 @@
         <div class="ql-icon">📅</div>
         <div><span class="ql-lbl">Booking Form</span><span class="ql-val">Fill in below ↓</span></div>
       </a>
+      @if (drop.open) {
+      <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="quick-link">
+        <div class="ql-icon">🔮</div>
+        <div><span class="ql-lbl">Reading Drop — Live Now</span><span class="ql-val">Secure your slot →</span></div>
+      </a>
+      }
     </div>
   </div>
 </div>
@@ -41,18 +47,17 @@
         <label>Service of Interest</label>
         <select [(ngModel)]="form.service" name="service" required>
           <option value="" disabled selected>Select a service…</option>
-          <optgroup label="Tarot Readings">
+          <optgroup label="Bespoke Audio Readings">
             <option>5-Question Recorded Reading — R500</option>
             <option>8-Question Recorded Reading — R600</option>
             <option>60-Minute Live Call Session — R800</option>
           </optgroup>
           <optgroup label="Breathwork">
             <option>60-Minute Breathwork Reset — R600</option>
-            <option>6-Week Breathing Programme — R5,000</option>
+            <option>6-Week Somatic Breathwork Container — R5,000</option>
           </optgroup>
-          <optgroup label="Programmes">
-            <option>6-Week Umbilini Breathing Programme — R5,000</option>
-            <option>Spinal Cartomancy — 6 Months — from R2,500</option>
+          <optgroup label="Mentorship">
+            <option>Card Reading Mastery Container — 6 Months — from R2,500</option>
           </optgroup>
           <optgroup label="Apothecary">
             <option>Aura Care Box — R1,000</option>
@@ -127,7 +132,7 @@
     </div>
     <div class="bank-card" style="margin-top:1rem">
       <div class="bc-header">
-        <h4>Programme Enrollment</h4><span>Cartomancy & Umbilini deposits</span>
+        <h4>Programme Enrollment</h4><span>Container & Mentorship deposits</span>
       </div>
       <div class="bc-rows">
         <div class="bc-row"><span>Account Number</span><span>152 765 3364</span></div>
@@ -154,13 +159,13 @@
   <span class="eyebrow">Not Sure Where to Start?</span>
   <div class="strip-grid">
     <a routerLink="/services" class="s-card"><span class="sc-num">01</span>
-      <h4>Tarot Readings</h4><span class="sc-price">From R500</span><span class="sc-arrow">View →</span>
+      <h4>Bespoke Audio Readings</h4><span class="sc-price">From R500</span><span class="sc-arrow">View →</span>
     </a>
     <a routerLink="/services" class="s-card"><span class="sc-num">02</span>
-      <h4>Breathwork</h4><span class="sc-price">From R350</span><span class="sc-arrow">View →</span>
+      <h4>Breathwork Container</h4><span class="sc-price">From R350</span><span class="sc-arrow">View →</span>
     </a>
     <a routerLink="/services" class="s-card"><span class="sc-num">03</span>
-      <h4>Spinal Cartomancy</h4><span class="sc-price">From R2,500</span><span class="sc-arrow">View →</span>
+      <h4>Card Reading Mastery</h4><span class="sc-price">From R2,500</span><span class="sc-arrow">View →</span>
     </a>
     <a routerLink="/apothecary" class="s-card"><span class="sc-num">04</span>
       <h4>Somatic Apothecary</h4><span class="sc-price">From R80</span><span class="sc-arrow">View →</span>

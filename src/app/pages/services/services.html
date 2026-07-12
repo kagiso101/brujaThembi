@@ -1,39 +1,43 @@
 <div class="svc-hero">
     <div class="hero-left">
-        <span class="hero-tag">Sessions · Programs · Classes</span>
+        <span class="hero-tag">Readings · Containers · Mentorship</span>
         <h1 class="hero-title">The Work<br>of a <em>Bruja</em></h1>
-        <p class="hero-sub">Four distinct modalities. One integrated system — rooted in body wisdom, ancestral
-            knowledge, and measurable energetic transformation.</p>
+        <p class="hero-sub">Three ways to work with Bruja Thembi — a personal reading delivered to your inbox, a 6-week
+            breathwork journey, or a 6-month card reading mentorship. Each one is designed around a single outcome:
+            leaving you clearer, calmer, and more in command of your own energy.</p>
     </div>
     <div class="hero-img"><img src="assets/images/portraits/phones.png" alt="Bruja Thembi" /></div>
 </div>
 
 <nav class="svc-nav">
-    <a (click)="setTab('tarot')" [class.active]="activeTab==='tarot'">01 — Tarot Readings</a>
-    <a (click)="setTab('breathwork')" [class.active]="activeTab==='breathwork'">02 — Breathwork</a>
-    <a (click)="setTab('umbilini')" [class.active]="activeTab==='umbilini'">03 — Umbilini</a>
-    <a (click)="setTab('cartomancy')" [class.active]="activeTab==='cartomancy'">04 — Spinal Cartomancy</a>
+    <a (click)="setTab('readings')" [class.active]="activeTab==='readings'">01 — Bespoke Audio Readings</a>
+    <a (click)="setTab('breathwork')" [class.active]="activeTab==='breathwork'">02 — Breathwork Container</a>
+    <a (click)="setTab('cartomancy')" [class.active]="activeTab==='cartomancy'">03 — Card Reading Mastery</a>
     <a routerLink="/contact">Book & Pay</a>
 </nav>
 
-<!-- TAROT -->
-@if (activeTab==='tarot') {
+<!-- BESPOKE AUDIO READINGS (THE DROP) -->
+@if (activeTab==='readings') {
 <section id="readings" class="svc-section">
     <div class="svc-content reveal">
         <span class="eyebrow">Service 01</span>
-        <h2 class="sec">Tarot <em>Readings</em></h2>
+        <h2 class="sec">Bespoke Audio <em>Readings</em></h2>
         <div class="divider"></div>
-        <p class="body-text">Sessions that reflect the movement of life force. Each reading comes with a full written
-            transcript for reflection and later reference.</p>
+        <p class="body-text"><strong>Custom card readings delivered straight to your inbox</strong> — a private audio
+            recording plus a written integration transcript.</p>
+        <p class="body-text">Need clear, deeply personal guidance on a situation you're facing right now — without
+            committing to a long programme? Receive a highly polished, personalised audio analysis targeting your exact
+            spiritual, energetic, and path questions. Bruja channels her full focus into your reading, and your
+            transcript gives you practical integration notes you can return to forever.</p>
         <ul class="price-table">
             <li>
-                <div><span class="price-name">5-Question Recorded Reading</span><span class="price-note">20 min · audio
-                        + transcript</span></div>
+                <div><span class="price-name">5-Question Recorded Reading</span><span class="price-note">Private audio
+                        + integration transcript</span></div>
                 <span class="price-amt">R500</span>
             </li>
             <li>
-                <div><span class="price-name">8-Question Recorded Reading</span><span class="price-note">30 min · audio
-                        + transcript</span></div>
+                <div><span class="price-name">8-Question Recorded Reading</span><span class="price-note">Private audio
+                        + integration transcript</span></div>
                 <span class="price-amt">R600</span>
             </li>
             <li>
@@ -42,26 +46,68 @@
                 <span class="price-amt">R800</span>
             </li>
         </ul>
-        <div class="book-note"><strong>To Book:</strong> Submit your name, questions, and proof of payment to WhatsApp
-            <strong>079-357-4091</strong></div>
+        <div class="enrol-box">
+            <h4>How the Drop Works</h4>
+            <div class="e-row"><span>Availability</span><span>{{drop.slotsPerMonth}} slots per month</span></div>
+            <div class="e-row"><span>Released as</span><span>Bi-weekly drops of {{drop.slotsPerDrop}}</span></div>
+            <div class="e-row"><span>Delivery</span><span>Straight to your inbox</span></div>
+            @if (drop.open) {
+            <div class="e-row"><span>Status</span><span class="drop-live">● Drop is live</span></div>
+            } @else {
+            <div class="e-row"><span>Status</span><span>Closed · next drop {{drop.nextDropDate}}</span></div>
+            }
+        </div>
+        @if (drop.open) {
+        <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-dark drop-cta">Secure Your Slot →</a>
+        } @else {
+        <div class="book-note"><strong>This drop is full.</strong> The next {{drop.slotsPerDrop}} slots go live
+            {{drop.nextDropDate}}. Join the Community Mailing List (tick the box on the booking form, or WhatsApp
+            <strong>079-357-4091</strong>) to be notified first.</div>
+        }
     </div>
     <div class="svc-img reveal d1"><img src="assets/images/portraits/portrait-warm.jpg" alt="Reading session" /></div>
 </section>
 }
 
-<!-- BREATHWORK -->
+<!-- SOMATIC BREATHWORK CONTAINER -->
 @if (activeTab==='breathwork') {
 <section id="breathwork" class="svc-section dark">
     <div class="svc-content reveal">
         <span class="eyebrow lt">Service 02</span>
-        <h2 class="sec lt">Breathwork <em>Containers</em></h2>
+        <h2 class="sec lt">Somatic Breathwork <em>Container</em></h2>
         <div class="divider lt"></div>
-        <p class="body-text lt">Breathwork that builds and strengthens life force. Each container focuses on unlocking
-            hormones as the body's own medicine.</p>
-        <ul class="price-table lt">
+        <p class="body-text lt"><strong>A 6-week immersive journey in nervous system regulation and energetic
+                optimisation.</strong></p>
+        <p class="body-text lt">If you feel chronically overwhelmed, stuck in stress cycles, tired, or disconnected
+            from your body's natural vitality — this intimate container is built for you. Through precise somatic
+            breathwork practices, we shift your body out of survival mode, release stored emotional tension, and
+            rewrite your baseline for peace, presence, and power.</p>
+        <p class="body-text lt">Over the six weeks, the practice reorients the body according to the four cardinal
+            directions and the seven vortexes — dissolving <em>Isikhakhane</em>, the residue of unfinished business
+            blocking your <em>uMoya</em> (Spirit/Breath):</p>
+        <div class="chakra-list lt">
+            @for (c of chakras; track c.num) {
+            <div class="chakra-row">
+                <span class="c-n">{{c.num}}</span>
+                <span class="c-name">{{c.name}}</span>
+                <span class="c-desc">{{c.desc}}</span>
+            </div>
+            }
+        </div>
+        <div class="enrol-box lt">
+            <h4>Format & Investment</h4>
+            <div class="e-row"><span>Format</span><span>Deep-dive group integration · 6 weeks</span></div>
+            <div class="e-row"><span>Intimacy cap</span><span>Strictly 10 slots per cohort</span></div>
+            <div class="e-row"><span>Registration Deposit</span><span>R2,000</span></div>
+            <div class="e-row"><span>Then</span><span>R1,500 × 2</span></div>
+            <div class="e-row"><span>Total Investment</span><span>R5,000</span></div>
+        </div>
+        <div class="book-note lt"><strong>Status:</strong> Doors open next in August for the September 4th cohort.
+            Join the Community Mailing List for priority access — WhatsApp <strong>079-357-4091</strong>.</div>
+        <ul class="price-table lt" style="margin-top:2.5rem">
             <li>
                 <div><span class="price-name">60-Minute Breathwork Reset</span><span class="price-note">Monthly
-                        container</span></div>
+                        standalone session</span></div>
                 <span class="price-amt">R600</span>
             </li>
             <li>
@@ -74,14 +120,7 @@
                         guided audio</span></div>
                 <span class="price-amt">R600</span>
             </li>
-            <li>
-                <div><span class="price-name">6-Week Breathing Programme</span><span class="price-note">R2,000 deposit ·
-                        R1,500 × 2</span></div>
-                <span class="price-amt">R5,000</span>
-            </li>
         </ul>
-        <div class="book-note lt"><strong>Enrollment:</strong> Apr 19 – May 3 · <strong>Cycle:</strong> May 10 – June
-            2026</div>
     </div>
     <div class="svc-img-stack reveal d1">
         <img src="assets/images/bulletin/vid-breath.jpg" alt="Breathwork promo" class="top-img" />
@@ -90,54 +129,20 @@
 </section>
 }
 
-<!-- UMBILINI -->
-@if (activeTab==='umbilini') {
-<section id="umbilini" class="svc-section">
-    <div class="svc-content reveal">
-        <span class="eyebrow">Service 03</span>
-        <h2 class="sec">6-Week Umbilini <em>Breathing</em></h2>
-        <div class="divider"></div>
-        <p class="body-text">Reorients the body according to the four cardinal directions and the seven vortexes.
-            Dissolves <em>Isikhakhane</em> — the residue of unfinished business blocking your <em>uMoya</em>
-            (Spirit/Breath).</p>
-        <div class="chakra-list">
-            @for (c of chakras; track c.num) {
-            <div class="chakra-row">
-                <span class="c-n">{{c.num}}</span>
-                <span class="c-name">{{c.name}}</span>
-                <span class="c-desc">{{c.desc}}</span>
-            </div>
-            }
-        </div>
-        <ul class="price-table" style="margin-top:2rem">
-            <li>
-                <div><span class="price-name">Registration Deposit</span></div><span class="price-amt">R2,000</span>
-            </li>
-            <li>
-                <div><span class="price-name">Second Payment</span></div><span class="price-amt">R1,500</span>
-            </li>
-            <li>
-                <div><span class="price-name">Third Payment</span></div><span class="price-amt">R1,500</span>
-            </li>
-            <li>
-                <div><span class="price-name">Total Investment</span></div><span class="price-amt">R5,000</span>
-            </li>
-        </ul>
-    </div>
-    <div class="svc-img reveal d1"><img src="assets/images/portraits/portrait-red-bg.jpg" alt="Bruja Thembi" /></div>
-</section>
-}
-
-<!-- CARTOMANCY -->
+<!-- CARD READING MASTERY CONTAINER -->
 @if (activeTab==='cartomancy') {
 <section id="cartomancy" class="svc-section peach">
-    <div class="svc-img reveal"><img src="assets/images/portraits/thembi-books.jpeg" alt="Spinal Cartomancy" /></div>
+    <div class="svc-img reveal"><img src="assets/images/portraits/thembi-books.jpeg" alt="Card Reading Mastery" /></div>
     <div class="svc-content reveal d1">
-        <span class="eyebrow dk">Service 04</span>
-        <h2 class="sec">Spinal <em>Cartomancy</em></h2>
+        <span class="eyebrow dk">Service 03</span>
+        <h2 class="sec">The Card Reading <em>Mastery Container</em></h2>
         <div class="divider dk"></div>
-        <p class="body-text">A 6-month professional container — 24 classes. The spine is the antenna of the human body.
-            This framework teaches divination from the marrow up.</p>
+        <p class="body-text"><strong>A premium 6-month instructional mentorship in deep cartomancy and metaphysical
+                alignment.</strong></p>
+        <p class="body-text">This is not standard fortune-telling. This is a rigorous, high-level structural framework
+            for those ready to deeply understand the language of divination using a deck of cards, read energy with
+            absolute precision, and step into personal sovereignty. Whether for your personal expansion or professional
+            mastery, you will walk away with unshakeable clarity.</p>
         <div class="pillars-grid">
             @for (p of pillars; track p.num) {
             <div class="pillar-card">
@@ -148,12 +153,17 @@
             }
         </div>
         <div class="enrol-box">
-            <h4>Enrollment & Pricing</h4>
-            <div class="e-row"><span>Enrollment Window</span><span>4 May – 16 May</span></div>
-            <div class="e-row"><span>Launch</span><span>June 2026 · 6 Months · 24 Classes</span></div>
+            <h4>Format & Investment</h4>
+            <div class="e-row"><span>Format</span><span>6-Month Intensive Mentorship · 24 classes</span></div>
+            <div class="e-row"><span>Intimacy cap</span><span>Strictly 20 slots per cycle</span></div>
+            <div class="e-row"><span>Current cycle</span><span>Began June 25th</span></div>
             <div class="e-row"><span>Registration Deposit</span><span>R2,500</span></div>
             <div class="e-row"><span>Monthly Investment</span><span>R1,500 / month</span></div>
         </div>
+        <div class="book-note"><strong>Applications are currently closed.</strong> Join the Community Mailing List to
+            be notified when the next enrollment window opens — WhatsApp <strong>079-357-4091</strong>.</div>
+        <a [href]="dreamVaultUrl" target="_blank" rel="noopener" class="vault-link">Enrolled students: submit your
+            dreams via the Dream Unpacking Vault →</a>
     </div>
 </section>
 }
@@ -172,9 +182,15 @@
         <span class="eyebrow lt">How to Book</span>
         <h2 class="sec lt">Ready to <em>Begin?</em></h2>
         <div class="divider lt"></div>
-        <p class="body-text lt">Send your name, service, and questions via WhatsApp with proof of payment. Sessions
-            confirmed once payment reflects.</p>
-        <a routerLink="/contact" class="btn-primary" style="margin-top:2rem;display:inline-block;">Contact Thembi</a>
+        <p class="body-text lt">For readings, secure a slot through the booking form when a drop is live. For
+            containers and everything else, send your name, service, and questions via WhatsApp with proof of payment.
+            Sessions are confirmed once payment reflects.</p>
+        <div class="banner-ctas">
+            @if (drop.open) {
+            <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary">Secure a Reading Slot</a>
+            }
+            <a routerLink="/contact" class="btn-primary">Contact Thembi</a>
+        </div>
     </div>
     <div class="bank-cards reveal d1">
         <div class="bank-card">

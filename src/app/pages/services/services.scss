@@ -181,6 +181,25 @@
     line-height: 1.6;
 }
 
+// Light variants for the chakra list inside the dark breathwork section
+.chakra-list.lt {
+    .chakra-row {
+        border-color: rgba(250, 249, 246, 0.12);
+
+        &:first-child {
+            border-top-color: rgba(250, 249, 246, 0.12);
+        }
+    }
+
+    .c-name {
+        color: var(--white);
+    }
+
+    .c-desc {
+        color: rgba(250, 249, 246, 0.5);
+    }
+}
+
 .pillars-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -254,6 +273,62 @@
         color: var(--green-deep);
         font-weight: 500;
     }
+}
+
+// Light variant of the enrol box for dark sections
+.enrol-box.lt {
+    border-color: rgba(250, 249, 246, 0.15);
+    background: rgba(250, 249, 246, 0.04);
+
+    h4 {
+        color: var(--peach);
+    }
+
+    .e-row {
+        border-bottom-color: rgba(250, 249, 246, 0.08);
+
+        span:first-child {
+            color: rgba(250, 249, 246, 0.45);
+        }
+
+        span:last-child {
+            color: var(--white);
+        }
+    }
+}
+
+.drop-live {
+    color: var(--peach-deep) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+}
+
+.drop-cta {
+    margin-top: 2rem;
+    align-self: flex-start;
+}
+
+.vault-link {
+    margin-top: 1.5rem;
+    display: inline-block;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--green-deep);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.65;
+    }
+}
+
+.banner-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 .gallery-strip {

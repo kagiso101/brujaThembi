@@ -3,6 +3,7 @@ import { ScrollRevealService } from '../../services/scroll-reveal.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { BOOKING_FORM_URL, DROP } from '../../shared/booking-links';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,8 @@ import { RouterLink } from '@angular/router';
 })
 export class Contact {
   private reveal = inject(ScrollRevealService);
+  bookingFormUrl = BOOKING_FORM_URL;
+  drop = DROP;
 
   form = { firstName: '', lastName: '', email: '', phone: '', service: '', message: '' };
 

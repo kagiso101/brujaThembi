@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, inject } from '@angular/core';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
-import { Router } from '@angular/router';
+import { AURA_CARE_ORDER_FORM_URL } from '../../shared/booking-links';
 
 @Component({
   selector: 'app-apothecary',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class Apothecary implements AfterViewInit {
   private reveal = inject(ScrollRevealService);
-  private router = inject(Router);
+  orderFormUrl = AURA_CARE_ORDER_FORM_URL;
   activeTab = 'capsules';
 
   capsuleIngredients = [
@@ -78,9 +78,5 @@ export class Apothecary implements AfterViewInit {
     const targetY = sectionTop - mainNavH - prodNav.offsetHeight;
 
     window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
-  }
-
-  navigate() {
-    this.router.navigate(['/contact']);
   }
 }

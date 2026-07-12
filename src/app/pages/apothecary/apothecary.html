@@ -183,10 +183,11 @@
     <span class="eyebrow">All Products</span>
     <h2 class="sec">Full Price <em>List</em></h2>
     <div class="divider"></div>
-    <p class="body-text">Order via WhatsApp — send your name, products, and proof of payment. Courier: R150 (included in
-      Aura Care Box).</p>
-    <p style="margin-top:1rem;font-size:0.78rem;color:var(--muted)">
-    <a class="btn-dark" style="margin-top:2rem;display:inline-block" (click)="navigate()">Order Now</a>
+    <p class="body-text">Place your order through the Aura Care Order Form — you'll receive an email invoice, and
+      payment is processed from there. Orders are collected throughout the month and delivered in the last week of
+      every month. Courier: R150 (included in the Aura Care Box).</p>
+    <a class="btn-dark" style="margin-top:2rem;display:inline-block" [href]="orderFormUrl" target="_blank"
+      rel="noopener">Order via the Aura Care Form</a>
   </div>
   <ul class="price-table reveal d1">
     @for (p of allPrices; track p.name) {

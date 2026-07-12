@@ -1,6 +1,7 @@
 import { Component, inject, signal, OnInit, OnDestroy } from '@angular/core';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
 import { RouterLink } from '@angular/router';
+import { BOOKING_FORM_URL, DROP } from '../../shared/booking-links';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { RouterLink } from '@angular/router';
 })
 export class Home implements OnInit, OnDestroy {
   private reveal = inject(ScrollRevealService);
+  bookingFormUrl = BOOKING_FORM_URL;
+  drop = DROP;
 
   testimonials = [
     {
