@@ -14,25 +14,25 @@ export class Apothecary implements AfterViewInit {
   activeTab = 'capsules';
 
   capsuleIngredients = [
-    { glyph: '♀', name: 'Hibiscus', desc: 'The Iron Factor. Bridges the gap between air in your lungs and energy in your cells. Combats microcytic anaemia, brain fog, anxiety, and chronic fatigue. Powerhouse of non-heme iron and Vitamin C.' },
-    { glyph: '☽', name: 'Brahmi', desc: 'The Herb of Grace — revered in Ayurveda for cognitive enhancement, mental clarity, and stress relief. Adaptogenic and nootropic. Reduces anxiety and protects brain cells from oxidative stress.' },
-    { glyph: '♄', name: 'Castor Oil', desc: 'Purification and chakra healing. Cleanses the aura of negative energies. Balances the Root Chakra, stabilising emotions and grounding spiritual energies.' },
+    { glyph: '♀', name: 'Hibiscus', desc: 'For when you are always tired. Hibiscus is rich in iron and vitamin C, and it is what people here reach for when they are dragging, foggy and running on empty.' },
+    { glyph: '☽', name: 'Brahmi', desc: 'For a busy head. Known in Ayurveda as the Herb of Grace — used in India for hundreds of years by people who need to think clearly and feel less wound up.' },
+    { glyph: '♄', name: 'Castor Oil', desc: 'For clearing out. Long used to clean the body out and to settle the Root Chakra — the base that keeps you grounded and steady.' },
   ];
 
   herbs = [
-    { latin: 'Scoparia dulcis', name: 'Orange Flower', desc: 'Balances the sacral centre. Releases hormones that regulate blood sugar. Used for menstrual disorders and reducing labour pain.' },
-    { latin: 'Leonurus cardiaca', name: 'Motherwort', desc: 'Cardiotonic, sedative, antispasmodic. Soothes menstrual irregularities, eases uterus cramps. Not for use during pregnancy.' },
-    { latin: 'Glycyrrhiza Glabra', name: 'Liquorice Root', desc: 'Anti-viral, anti-bacterial, antioxidant. Tested against HSV, Hepatitis B & C, H. Pylori. Eases menopause symptoms.' },
-    { latin: 'Jasminum officinalis', name: 'Jasmine', desc: 'Calming antimicrobial. Eases muscle pain, improves sleep quality, reduces cortisol. Aphrodisiac that eases PMS and labour pains.' },
-    { latin: 'Althea officinalis', name: 'Marshmallow Root', desc: 'Emollient for skin inflammation — helps with boils, burns, eczema, psoriasis. Soothes the urinary tract. Eases cystitis.' },
-    { latin: 'Rosmarinus', name: 'Rosemary', desc: 'Antifungal — inhibits candida albicans. Circulation booster and uterine stimulant. Disinfects and reduces discharge in steaming.' },
+    { latin: 'Scoparia dulcis', name: 'Orange Flower', desc: 'Traditionally used for period trouble and to take the edge off labour pain.' },
+    { latin: 'Leonurus cardiaca', name: 'Motherwort', desc: 'A calming herb, long used to settle the heart and ease cramps. Do not use while pregnant.' },
+    { latin: 'Glycyrrhiza Glabra', name: 'Liquorice Root', desc: 'A soothing root. Traditionally used to calm irritation and to ease the change of life.' },
+    { latin: 'Jasminum officinalis', name: 'Jasmine', desc: 'Calming, and it smells beautiful. Traditionally used for aching muscles and to help you sleep.' },
+    { latin: 'Althea officinalis', name: 'Marshmallow Root', desc: 'A softening herb, traditionally used on sore, irritated skin — boils, burns and itchy patches.' },
+    { latin: 'Rosmarinus', name: 'Rosemary', desc: 'Warming and cleansing. Traditionally used in steaming to freshen up and get things moving.' },
   ];
 
   skincare = [
-    { cat: 'Cleanse', name: 'Black Soap Shower Gel', desc: 'Plant-based — cleanses not only the body but the aura. Washes away harmful thoughts, insecurities, and fears alongside physical dirt.', price: 'R190' },
-    { cat: 'Hydrate', name: 'Root Lotion', desc: 'Grounding body lotion anchored in root-based botanicals. Nourishes the skin while supporting the Root Chakra and physical stability.', price: 'R145' },
-    { cat: 'Rest', name: 'Aura Oil Sleep Serum', desc: 'Sleep-inducing oil blend designed to calm the nervous system and prepare the body for deep, restorative rest.', price: 'R130' },
-    { cat: 'Ritual', name: 'Aura Salt Mixes', desc: 'Ritual salts for bath and body. Used in water activation practices to clear the electromagnetic field and remove energetic residue.', price: 'R380' },
+    { cat: 'Cleanse', name: 'Black Soap Shower Gel', desc: 'Plant-based body wash. Cleans the body and the aura both — washes off the dirt, and the worries and fears that came home with it.', price: 'R190' },
+    { cat: 'Hydrate', name: 'Root Lotion', desc: 'A body lotion made with root plants. Feeds dry skin and works on the Root Chakra — the base that keeps you steady on your feet.', price: 'R145' },
+    { cat: 'Rest', name: 'Aura Oil Sleep Serum', desc: 'An oil blend for before bed. Made to calm you down enough that you actually fall asleep.', price: 'R130' },
+    { cat: 'Ritual', name: 'Aura Salt Mixes', desc: 'Salts for the bath and body, used in water rituals. For when you need to soak the week off you and start clean.', price: 'R380' },
   ];
 
   boxContents = [
@@ -47,7 +47,7 @@ export class Apothecary implements AfterViewInit {
   allPrices = [
     { name: 'Hibiscus / Brahmi / Castor Oil Capsules (30s)', price: 'R80' },
     { name: 'Hibiscus / Brahmi / Castor Oil Capsules (90s)', price: 'R180' },
-    { name: 'Medicinal Steaming Blend', price: 'R469' },
+    { name: 'Steaming Blend', price: 'R469' },
     { name: 'Black Soap Shower Gel', price: 'R190' },
     { name: 'Root Lotion', price: 'R145' },
     { name: 'Aura Oil Sleep Serum', price: 'R130' },

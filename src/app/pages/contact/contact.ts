@@ -19,20 +19,20 @@ export class Contact {
   form = { firstName: '', lastName: '', email: '', phone: '', service: '', message: '' };
 
   steps = [
-    { num: '01', title: 'Reach Out', desc: 'Send a WhatsApp or fill in the form above. Include your name and the service you\'re interested in.' },
-    { num: '02', title: 'Send Your Questions', desc: 'For readings — send your questions. For breathwork or programmes — share what you\'re hoping to work on.' },
-    { num: '03', title: 'Make Payment', desc: 'Transfer to the banking details below and send proof of payment via WhatsApp. Session confirmed once payment reflects.' },
-    { num: '04', title: 'Prepare Your Space', desc: 'You\'ll receive a preparation guide. For breathwork: avoid heavy meals 90 min before. For readings: have a notepad ready.' },
-    { num: '05', title: 'Receive Your Session', desc: 'Recorded readings delivered within 48 hours. Live sessions scheduled via WhatsApp. All include a full written transcript.' },
+    { num: '01', title: 'Get In Touch', desc: 'Send a WhatsApp or fill in the form above. Tell her your name and what you are after.' },
+    { num: '02', title: 'Send Your Questions', desc: 'Booking a reading? Send your questions. Anything else? Just say what you are dealing with.' },
+    { num: '03', title: 'Pay', desc: 'Transfer using the banking details below and send proof of payment on WhatsApp. You are booked as soon as the money shows.' },
+    { num: '04', title: 'Get Ready', desc: 'She sends you a short guide. For breathwork: no heavy meals 90 minutes before. For readings: have something to write with.' },
+    { num: '05', title: 'Your Session', desc: 'Recorded readings come back to you within 48 hours. Live sessions get booked on WhatsApp. Either way you get a written copy to keep.' },
   ];
 
   terms = [
-    { num: 'I', title: 'Cancellations & Rescheduling', desc: '24 hours\' notice required. Sessions cancelled with less than 24 hours\' notice are charged at the full rate.' },
-    { num: 'II', title: 'Breathwork Safety', desc: 'Avoid heavy meals at least 90 minutes before any breathwork session begins.' },
-    { num: 'III', title: 'Health Disclosures', desc: 'If you have cardiovascular concerns, high blood pressure, or are pregnant, notify Bruja privately before booking.' },
-    { num: 'IV', title: 'Recordings & Transcripts', desc: 'All readings include a full written transcript. Recordings shared within 48 hours of payment confirmation.' },
-    { num: 'V', title: 'Courier (Products)', desc: 'R150 courier charge for individual orders. The Aura Care Box includes courier in the R1,000 price.' },
-    { num: 'VI', title: 'Programme Deposits', desc: 'Deposits secure your seat. The balance is payable in monthly instalments as outlined per programme.' },
+    { num: 'I', title: 'Cancelling or Moving a Session', desc: 'Let her know at least 24 hours before. Any later than that and the session is charged in full.' },
+    { num: 'II', title: 'Before Breathwork', desc: 'Do not eat a heavy meal in the 90 minutes before a breathwork session.' },
+    { num: 'III', title: 'Tell Her About Your Health', desc: 'If you have heart trouble, high blood pressure, or you are pregnant, tell Bruja privately before you book.' },
+    { num: 'IV', title: 'Recordings & Written Copies', desc: 'Every reading comes with a full written copy. Recordings are sent within 48 hours of your payment clearing.' },
+    { num: 'V', title: 'Courier', desc: 'R150 for single orders. The Aura Care Box already has courier included in the R1,000.' },
+    { num: 'VI', title: 'Course Deposits', desc: 'Your deposit holds your place. The rest is paid off monthly, as set out for each course.' },
   ];
 
   activeTab = 'tarot';
