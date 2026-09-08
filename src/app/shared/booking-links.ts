@@ -17,6 +17,14 @@ export const DREAM_VAULT_FORM_URL =
 export const AURA_CARE_ORDER_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSeWEz8bdLSvtX_LO0XKTuGDLVB-w-R9tvCONgtW7RG3kVgP_Q/viewform';
 
+// Astral Gym — alumni-only monthly membership sign-up.
+// Currently a pre-filled WhatsApp message; swap for a Google Form link when one exists.
+export const ASTRAL_GYM_SIGNUP_URL =
+  'https://wa.me/27793574091?text=' +
+  encodeURIComponent(
+    'Hi Bruja Thembi! I completed the 6-week breathwork container and would like to join the Astral Gym monthly membership.'
+  );
+
 // The Drop — bespoke audio readings
 export const DROP = {
   open: true,

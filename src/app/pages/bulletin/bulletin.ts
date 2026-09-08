@@ -34,11 +34,10 @@ export class Bulletin implements AfterViewInit {
 
   videos: VideoCard[] = [
     {
-      videoId: '2hzrvKPJalA',
-      title: 'Thought Transmission & Ancestry — Part 1',
-      meta: 'Bruja TheOracle · Part 1',
-      desc: 'Where to start. How to tell which thoughts are yours, which come from your ancestors, and which ones you have picked up off somebody else — plus why the work starts at the base of the spine and moves up from there.',
-      customThumb: 'assets/images/bulletin/image2.png',
+      videoId: 'RQ32Lklg5pc',
+      title: 'How to Order: Aura Care from the Somatic Apothecary',
+      meta: 'Bruja TheOracle · How to Order',
+      desc: 'A personal walkthrough from Bruja Thembi — how the aura care products work, how to place an order, and what happens from your first message to delivery at your door.',
     },
     {
       videoId: 'UVDucYgbxcE',

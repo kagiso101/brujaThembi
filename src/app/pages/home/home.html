@@ -2,17 +2,17 @@
 <section class="hero">
   <div class="hero-texture"></div>
   <div class="hero-left">
-    <span class="hero-eyebrow">South African Cartomancer · Since 2018</span>
+    <span class="hero-eyebrow">South African Cartomancer</span>
     <h1 class="hero-title">
-      Bridging the<br><em>Clinical</em><br>with the Celestial
+      Intuitive Card Readings<br>& <em>Somatic Exercises</em><br>for the Modern Individual
     </h1>
     <p class="hero-sub">
-      Tarot therapy, somatic breathwork, and aura care for high-performance professionals and corporate teams.
-      Precision. Presence. Peak performance.
+      Deepen your connection to self through intuitive cartomancy, nervous system breathwork, and energetic aura care.
     </p>
     <div class="hero-ctas">
-      <a routerLink="/contact" class="btn-primary">Book a Session</a>
-      <a routerLink="/corporate" class="btn-ghost">Corporate Wellness</a>
+      <a routerLink="/contact" class="btn-primary">Book a Reading</a>
+      <span class="hero-or">or</span>
+      <a routerLink="/apothecary" class="btn-ghost">Explore the Apothecary</a>
     </div>
   </div>
   <div class="hero-right">
@@ -24,17 +24,25 @@
 <!-- DROP ANNOUNCEMENT -->
 <section class="drop-banner">
   <div class="drop-banner-text">
-    <span class="drop-label">Bespoke Audio Readings — The Drop</span>
+    <span class="drop-label">The Drop: Custom Audio Readings</span>
     @if (drop.open) {
-    <p>A drop of {{drop.slotsPerDrop}} reading slots is <strong>live now</strong>. Custom card readings delivered
-      straight to your inbox — audio plus integration transcript.</p>
+    <h3 class="drop-sub">Limited Slots Available</h3>
+    <p>For personalised card readings specific to what you want clarity on and which area of life you'd like the focus
+      to be on. Receive in-depth voice recordings detailing findings, complete with an integration transcript you can
+      read, re-read, and reflect on whenever you need clarity.</p>
+    <ul class="drop-points">
+      <li>No scheduling conflicts or live calls required.</li>
+      <li>Audio recording delivered straight to your inbox.</li>
+      <li>Full integration notes and practical takeaway prompts included.</li>
+    </ul>
     } @else {
-    <p>This drop is full. The next {{drop.slotsPerDrop}} slots go live {{drop.nextDropDate}} — join the Community
-      Mailing List to hear first.</p>
+    <h3 class="drop-sub">This Drop Is Full</h3>
+    <p>The next {{drop.slotsPerDrop}} slots go live {{drop.nextDropDate}} — join the Community Mailing List to hear
+      first.</p>
     }
   </div>
   @if (drop.open) {
-  <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary">Secure Your Slot</a>
+  <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary">Claim an Audio Reading Slot</a>
   } @else {
   <a routerLink="/services" class="btn-ghost">Learn More</a>
   }
@@ -76,14 +84,16 @@
 <section class="video-hero">
   <div class="video-hero-texture"></div>
   <div class="video-hero-header reveal">
-    <span class="eyebrow peach">Watch · 2026</span>
-    <h2 class="sec lt">How It <em>Works</em></h2>
+    <span class="eyebrow peach">Watch · Part 1</span>
+    <h2 class="sec lt">Thought Transmission <em>&amp; Ancestry</em></h2>
     <div class="divider lt"></div>
-    <p class="body-text lt">A personal walkthrough from Bruja Thembi — how readings, containers, and the booking
-      process work, from your first question to your delivered guidance.</p>
+    <p class="body-text lt">Where to start. How to tell which thoughts are yours, which come from your ancestors, and
+      which ones you have picked up off somebody else — plus why the work starts at the base of the spine and moves up
+      from there.</p>
   </div>
   <div class="video-frame reveal d1">
-    <iframe src="https://www.youtube-nocookie.com/embed/RQ32Lklg5pc?rel=0" title="How It Works — Bruja Thembi"
+    <iframe src="https://www.youtube-nocookie.com/embed/2hzrvKPJalA?rel=0"
+      title="Thought Transmission &amp; Ancestry — Part 1 — Bruja Thembi"
       loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
   </div>
