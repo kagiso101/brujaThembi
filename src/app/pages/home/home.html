@@ -42,7 +42,7 @@
     }
   </div>
   @if (drop.open) {
-  <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary">Claim an Audio Reading Slot</a>
+  <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary" data-ga-location="home-drop" data-ga-form="session-booking">Claim an Audio Reading Slot</a>
   } @else {
   <a routerLink="/services" class="btn-ghost">Learn More</a>
   }

@@ -8,12 +8,12 @@ import { Home } from './pages/home/home';
 import { Services } from './pages/services/services';
 
 export const routes: Routes = [
-  { path: '', component: Home},
-  { path: 'about', component: About},
-  { path: 'corporate', component: Corporate},
-  { path: 'services', component: Services},
-  { path: 'apothecary', component: Apothecary},
-  { path: 'bulletin', component: Bulletin},
-  { path: 'contact', component: Contact},
+  { path: '', component: Home, title: 'Bruja Thembi — Home' },
+  { path: 'about', component: About, title: 'Bruja Thembi — About' },
+  { path: 'corporate', component: Corporate, title: 'Bruja Thembi — For Teams' },
+  { path: 'services', component: Services, title: 'Bruja Thembi — Services' },
+  { path: 'apothecary', component: Apothecary, title: 'Bruja Thembi — Somatic Apothecary' },
+  { path: 'bulletin', component: Bulletin, title: 'Bruja Thembi — The Bulletin' },
+  { path: 'contact', component: Contact, title: 'Bruja Thembi — Book Now' },
   { path: '**', redirectTo: '' }
 ];

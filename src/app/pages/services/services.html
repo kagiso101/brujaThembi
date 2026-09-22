@@ -65,7 +65,7 @@
             }
         </div>
         @if (drop.open) {
-        <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-dark drop-cta">Secure Your Slot →</a>
+        <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-dark drop-cta" data-ga-location="services-readings" data-ga-form="session-booking">Secure Your Slot →</a>
         } @else {
         <div class="book-note"><strong>This drop is full.</strong> The next {{drop.slotsPerDrop}} slots go live
             {{drop.nextDropDate}}. Join the Community Mailing List (tick the box on the booking form, or WhatsApp
@@ -185,7 +185,7 @@
         <div class="book-note"><strong>Applications are currently closed.</strong> Join the Community Mailing List to
             be notified when the next enrollment window opens — WhatsApp <strong>079-357-4091</strong>.</div>
         <h4 class="sub-heading">For Current Enrolled Students</h4>
-        <a [href]="dreamVaultUrl" target="_blank" rel="noopener" class="vault-link">Submit Your Dreams via the Dream
+        <a [href]="dreamVaultUrl" target="_blank" rel="noopener" class="vault-link" data-ga-location="services-breathwork" data-ga-form="dream-vault">Submit Your Dreams via the Dream
             Unpacking Vault →</a>
     </div>
 </section>
@@ -257,7 +257,7 @@
             <div class="e-row"><span>Includes</span><span>Live monthly reset · Practice replays · Unlimited dream
                     unpackings</span></div>
         </div>
-        <a [href]="astralGymUrl" target="_blank" rel="noopener" class="btn-dark drop-cta">Join the Astral Gym →</a>
+        <a [href]="astralGymUrl" target="_blank" rel="noopener" class="btn-dark drop-cta" data-ga-location="services-astral-gym" data-ga-intent="astral-gym">Join the Astral Gym →</a>
     </div>
     <div class="svc-img-stack reveal d1">
         <img src="assets/images/portraits/portrait-outdoor.jpg" alt="Astral Gym" class="top-img" />
@@ -285,7 +285,7 @@
             Sessions are confirmed once payment reflects.</p>
         <div class="banner-ctas">
             @if (drop.open) {
-            <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary">Secure a Reading Slot</a>
+            <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary" data-ga-location="services-cta" data-ga-form="session-booking">Secure a Reading Slot</a>
             }
             <a routerLink="/contact" class="btn-primary">Contact Thembi</a>
         </div>

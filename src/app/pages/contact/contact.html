@@ -7,7 +7,7 @@
       <h1 class="hero-title">Let's Begin<br>Your <em>Journey</em></h1>
     </div>
     <div class="hero-right">
-      <a href="https://wa.me/27793574091" class="quick-link">
+      <a href="https://wa.me/27793574091" class="quick-link" data-ga-location="contact-hero" data-ga-intent="booking">
         <div class="ql-icon">💬</div>
         <div><span class="ql-lbl">WhatsApp — Fastest Response</span><span class="ql-val">079-357-4091</span></div>
       </a>
@@ -16,7 +16,7 @@
         <div><span class="ql-lbl">Booking Form</span><span class="ql-val">Fill in below ↓</span></div>
       </a>
       @if (drop.open) {
-      <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="quick-link">
+      <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="quick-link" data-ga-location="contact-hero" data-ga-form="session-booking">
         <div class="ql-icon">🔮</div>
         <div><span class="ql-lbl">Reading Drop — Live Now</span><span class="ql-val">Secure your slot →</span></div>
       </a>
@@ -114,7 +114,7 @@
 </div>
 
 <!-- BANKING -->
-<div class="banking-section">
+<div class="banking-section" #bankingSection>
   <div class="reveal">
     <span class="eyebrow dk">Payment Details</span>
     <h2 class="sec">Banking <em>Details</em></h2>
@@ -181,7 +181,7 @@
         consciousness</em> where I feel whole and connected."</p>
     <span class="close-sig">— Thembi Molaba · Yogi Bruja</span>
     <div class="close-btns">
-      <a href="https://wa.me/27793574091" class="btn-primary">WhatsApp Bruja</a>
+      <a href="https://wa.me/27793574091" class="btn-primary" data-ga-location="contact-cta" data-ga-intent="booking">WhatsApp Bruja</a>
       <a routerLink="/about" class="btn-ghost">Read Her Story</a>
     </div>
   </div>

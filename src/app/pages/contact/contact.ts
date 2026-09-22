@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, inject, viewChild } from '@angular/core';
+import { AnalyticsService } from '../../services/analytics';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -11,8 +12,10 @@ import { BOOKING_FORM_URL, DROP } from '../../shared/booking-links';
   templateUrl: './contact.html',
   styleUrl: './contact.scss',
 })
-export class Contact {
+export class Contact implements AfterViewInit {
   private reveal = inject(ScrollRevealService);
+  private analytics = inject(AnalyticsService);
+  private bankingSection = viewChild<ElementRef<HTMLElement>>('bankingSection');
   bookingFormUrl = BOOKING_FORM_URL;
   drop = DROP;
 
@@ -38,9 +41,15 @@ export class Contact {
   activeTab = 'tarot';
   setTab(t: string) { this.activeTab = t; }
 
-  ngAfterViewInit() { setTimeout(() => this.reveal.init(), 100); }
+  ngAfterViewInit() {
+    setTimeout(() => this.reveal.init(), 100);
+    const banking = this.bankingSection()?.nativeElement;
+    if (banking) this.analytics.observeBankingDetails(banking);
+  }
 
   handleSubmit() {
+    // Interaction only: the visitor name and message never reach GA.
+    this.analytics.event('contact_submit', { service: this.form.service || 'unspecified' });
     const name = `${this.form.firstName} ${this.form.lastName}`;
     const msg = encodeURIComponent(`Hi Bruja Thembi!\n\nName: ${name}\nService: ${this.form.service}\n\n${this.form.message}`);
     window.open(`https://wa.me/27793574091?text=${msg}`, '_blank');
