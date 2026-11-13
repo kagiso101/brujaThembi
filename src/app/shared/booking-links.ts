@@ -14,16 +14,20 @@ export const DREAM_VAULT_FORM_URL =
   'https://docs.google.com/forms/d/e/1FAIpQLSdyuwBLapPUvk1XPxBMSpH4pPUegaMOVapzq2U0xPNI8ffBew/viewform';
 
 // Aura Care Order Form — Somatic Apothecary orders
-export const AURA_CARE_ORDER_FORM_URL =
-  'https://docs.google.com/forms/d/e/1FAIpQLSeWEz8bdLSvtX_LO0XKTuGDLVB-w-R9tvCONgtW7RG3kVgP_Q/viewform';
+export const AURA_CARE_ORDER_FORM_URL = 'https://forms.gle/4hKis9ZXdQ45EKCJ6';
 
-// Astral Gym — alumni-only monthly membership sign-up.
-// Currently a pre-filled WhatsApp message; swap for a Google Form link when one exists.
-export const ASTRAL_GYM_SIGNUP_URL =
-  'https://wa.me/27793574091?text=' +
-  encodeURIComponent(
-    'Hi Bruja Thembi! I completed the 6-week breathwork container and would like to join the Astral Gym monthly membership.'
-  );
+// Dreamwork Matrix (Option 4, the "astral gym") — intake and sign-up form.
+export const DREAMWORK_MATRIX_SIGNUP_URL = 'https://forms.gle/RUAt5kgafEq6pZCw5';
+
+// Quantum Collapsing Manifestation Support — sign-up form for the 12-session package.
+export const QUANTUM_SIGNUP_URL = 'https://forms.gle/1C1Ho3dyVdjSD2qj6';
+
+// Eczema case study — the "Physical Health Changes" video essay on YouTube.
+export const ECZEMA_CASE_STUDY_VIDEO_ID = '7VuUxYGqTy4';
+
+// Programme booklet — the downloadable PDF walking through each facilitation offer's curriculum.
+// Drop the file at public/assets/docs/facilitation-programmes.pdf (the path below) to publish it.
+export const PROGRAMME_BOOKLET_URL = 'assets/docs/facilitation-programmes.pdf';
 
 // The Drop — bespoke audio readings
 export const DROP = {

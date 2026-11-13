@@ -15,7 +15,7 @@ The site is a static single-page application. It has no backend, no database and
 | `/` | Home | Hero, service strip with starting prices, embedded YouTube "how it works" video |
 | `/about` | About | Thembi's story (Credo Mutwa lineage, reading since 2018) |
 | `/corporate` | For Teams | Corporate wellness offering with event photos and testimonials |
-| `/services` | Services | Tabbed pricing: readings, breathwork, card-reading mentorship, Astral Gym |
+| `/services` | Services | Seven tabs: tarot readings and recurring spiritual therapy, breathwork, card-reading mentorship, Dreamwork Matrix (the astral gym), Quantum Collapsing Manifestation Support, apothecary order instructions, success stories (eczema case study video) |
 | `/apothecary` | Somatic Apothecary | Herbal capsules, steam blends, serums, the Aura Care Box |
 | `/bulletin` | The Bulletin | YouTube video grid, articles, WhatsApp broadcast and social channels |
 | `/contact` | Book Now | Contact form (opens WhatsApp), booking steps, banking details, terms |
@@ -32,9 +32,13 @@ Any unknown path redirects to home.
 | 60-Minute Breathwork Reset | R600 |
 | Guided Audio, single element | R350 |
 | Full 40-Minute Reset Link | R600 |
-| 6-Week Somatic Breathwork Container | R5,000 |
-| Card Reading Container, 26 weeks | R1,500 / month |
-| Astral Gym monthly membership | alumni only, sign-up via WhatsApp |
+| Option 1: Dreamwork-Based Regulation Blueprint, self-paced, 8 weeks | R5,094 |
+| Option 2: Full Immersion Facilitation + Cohort Integration, 8 weeks | R6,792 |
+| Option 3: Divination & Dreamwork Container, 6 months, Tier A self-paced or Tier B live cohort | R1,500 / month (R9,600 total incl. R600 tracking tools) |
+| Option 4: Dreamwork Matrix, 6 months | R500 / month, sign-up via Google Form |
+| Recurring Spiritual Therapy, weekly at R600 | R7,200 (12 weeks) / R15,600 (26 weeks) / R31,200 (52 weeks) |
+| Quantum Collapsing Manifestation Support, 12 video calls over 3 months, rolling out for 2027 | no price published, sign-up via Google Form |
+| Programme booklet PDF | linked from Services at `assets/docs/facilitation-programmes.pdf`, file to be supplied |
 | Capsules | R80 (30) / R180 (90) |
 | Steam blend | R469 per bag |
 | Aura Care Box | R1,000 incl. courier |
@@ -110,8 +114,8 @@ angular.json            CLI config; SCSS default, 500 kB / 1 MB bundle budgets
 
 | Service | Role | Where used |
 |---|---|---|
-| **WhatsApp** (`wa.me/27793574091`, displayed as 079-357-4091) | Primary contact channel, contact-form target, Astral Gym sign-up, broadcast list | Contact, footer, bulletin, about, apothecary, `booking-links.ts` |
-| **Google Forms** | Session Booking Sheet, Dream Unpacking Vault (container students), Aura Care Order Form | `booking-links.ts`, linked from services, contact, apothecary |
+| **WhatsApp** (`wa.me/27793574091`, displayed as 079-357-4091) | Primary contact channel, contact-form target, broadcast list | Contact, footer, bulletin, about, apothecary, `booking-links.ts` |
+| **Google Forms** | Session Booking Sheet, Dream Unpacking Vault (container students), Aura Care Order Form, Dreamwork Matrix sign-up, Quantum Collapsing sign-up | `booking-links.ts`, linked from services, contact, apothecary |
 | **Email** `bookings@brujathembi.com` | Secondary contact | Footer |
 | **Capitec Bank** EFT | All payments, manual reconciliation | Contact page banking section (a footer copy is commented out) |
 

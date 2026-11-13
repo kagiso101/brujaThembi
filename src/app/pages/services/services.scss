@@ -69,6 +69,175 @@
     }
 }
 
+.offer-strip {
+    background: var(--cream);
+    padding: 5rem 5rem 4rem;
+    border-top: 1px solid var(--border);
+}
+
+.offer-intro {
+    max-width: 720px;
+    margin-bottom: 3rem;
+}
+
+.booklet-cta {
+    margin-top: 1.8rem;
+    display: inline-block;
+}
+
+.booklet-note {
+    margin-top: 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: rgba(26, 46, 32, 0.55);
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+}
+
+.offer-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 1.6rem;
+    background: var(--white);
+    border: 1px solid rgba(26, 46, 32, 0.12);
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.3s;
+
+    &:hover {
+        border-color: var(--peach-deep);
+        transform: translateY(-3px);
+    }
+
+    h3 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.35rem;
+        font-weight: 400;
+        line-height: 1.2;
+        color: var(--green-deep);
+        margin: 0.6rem 0 0.8rem;
+    }
+
+    .o-num {
+        font-size: 0.62rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--peach-deep);
+    }
+
+    .o-format,
+    .o-best {
+        font-size: 0.8rem;
+        font-weight: 300;
+        line-height: 1.65;
+        color: rgba(26, 46, 32, 0.65);
+        margin-bottom: 0.7rem;
+    }
+
+    .o-price {
+        margin-top: auto;
+        padding-top: 1rem;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        color: var(--green-deep);
+    }
+
+    .o-arrow {
+        margin-top: 0.4rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--green-mid);
+    }
+}
+
+.tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-top: 1.6rem;
+
+    .enrol-box {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.tier-badge {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--peach-deep);
+    margin-bottom: 0.8rem;
+}
+
+.enrol-box.tier h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--green-deep);
+    margin-bottom: 0.6rem;
+}
+
+.enrol-box.lt.tier h4 {
+    color: var(--white);
+}
+
+.enrol-box.lt .enrol-intro {
+    color: rgba(250, 249, 246, 0.6);
+}
+
+.tier-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.4rem 0 1rem;
+    flex: 1;
+
+    li {
+        font-size: 0.8rem;
+        font-weight: 300;
+        line-height: 1.65;
+        color: rgba(26, 46, 32, 0.7);
+        padding: 0.45rem 0 0.45rem 1.1rem;
+        position: relative;
+        border-bottom: 1px solid rgba(26, 46, 32, 0.08);
+
+        &::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--peach-deep);
+        }
+
+        strong {
+            font-weight: 500;
+            color: var(--green-deep);
+        }
+    }
+}
+
+.enrol-box.lt .tier-list li {
+    color: rgba(250, 249, 246, 0.65);
+    border-bottom-color: rgba(250, 249, 246, 0.08);
+
+    strong {
+        color: var(--white);
+    }
+}
+
+.e-row.tier-total span:last-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+}
+
 .svc-nav {
     position: sticky;
     top: var(--nav-h);
@@ -78,9 +247,14 @@
     display: flex;
     gap: 0;
     overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     a {
-        padding: 1rem 2rem;
+        padding: 1rem 1.4rem;
         font-size: 0.66rem;
         font-weight: 400;
         letter-spacing: 0.2em;
@@ -115,6 +289,81 @@
     &.cream {
         background: var(--cream);
     }
+}
+
+.svc-section.stories {
+    grid-template-columns: 1fr;
+}
+
+.story-video {
+    background: var(--green-deep);
+    padding: 5rem 5rem 4.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .divider {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.video-frame {
+    width: 100%;
+    max-width: 1040px;
+    margin-top: 2.5rem;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(242, 217, 200, 0.25);
+    padding: 0.6rem;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
+        background: #000;
+    }
+}
+
+.story-watch {
+    margin-top: 2rem;
+}
+
+.story-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    padding: 5rem;
+    background: var(--cream);
+
+    .sub-title {
+        margin-top: 0;
+    }
+
+    .body-text + .body-text {
+        margin-top: 1.1rem;
+    }
+}
+
+.sub-heading.spaced {
+    margin-bottom: 0.8rem;
+}
+
+.svc-content .rationale {
+    margin-top: 1.4rem;
+}
+
+.svc-content .closing {
+    margin-top: 2.2rem;
+}
+
+.salute {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--green-deep);
+    margin-top: 0.6rem;
 }
 
 .sub-title {
@@ -459,12 +708,31 @@
         font-size: 0.62rem;
     }
 
+    .offer-strip {
+        padding: 4rem 2rem 3rem;
+    }
+
+    .offer-grid,
+    .tier-grid {
+        grid-template-columns: 1fr;
+    }
+
     .svc-section {
         grid-template-columns: 1fr;
     }
 
     .svc-content {
         padding: 4rem 2rem;
+    }
+
+    .story-video {
+        padding: 4rem 1rem 3rem;
+    }
+
+    .story-body {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding: 3.5rem 2rem;
     }
 
     .svc-img,

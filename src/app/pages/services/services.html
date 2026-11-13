@@ -1,30 +1,65 @@
 <div class="svc-hero">
     <div class="hero-left">
-        <span class="hero-tag">Readings · Containers · Mentorship</span>
+        <span class="hero-tag">Readings · Facilitation Containers · Mentorship</span>
         <h1 class="hero-title">The Work<br>of a <em>Bruja</em></h1>
-        <p class="hero-sub">Three distinct ways to work together: a personal reading delivered straight to your inbox,
-            a 6-week somatic breathwork journey, or a 26-week intuitive cartomancy mentorship.</p>
-        <p class="hero-sub">Each container is designed around a single outcome: helping you move through circumstances
-            with increased clarity, deeply connected to your own internal guidance. Not only is knowledge power, but it
-            helps you navigate life better, from a place of clarity and not chaos.</p>
+        <p class="hero-sub"><strong>Radical self-actualisation is what is being promoted here.</strong> This is not random
+            spiritual wellness advice or temporary relief. The aim is concrete, foundational tools so you can actively
+            regulate, unpack, and work with your own inner guidance with confidence.</p>
+        <p class="hero-sub">Somatic breathwork for raising umbilini, building magnetism and resetting the nervous system.
+            Dreamwork for observing subconscious patterns clearly. Astral and body tracking resources that help you
+            reflect. Intuitive frameworks such as cartomancy. Every piece of the puzzle centres on your own agency.</p>
+        <p class="hero-sub">There are people who talk about inner work, and there are people who practise and act on it.
+            Every week we gather in groups and put these tools to use, moving from passive survival into active,
+            self-directed transformation.</p>
     </div>
     <div class="hero-img"><img src="assets/images/portraits/phones.png" alt="Bruja Thembi" /></div>
 </div>
 
+<!-- FOUR TYPES OF SUPPORT -->
+<section class="offer-strip">
+    <div class="offer-intro reveal">
+        <span class="eyebrow">Four Types of Support</span>
+        <h2 class="sec">Choose the container that <em>matches your capacity</em></h2>
+        <div class="divider"></div>
+        <p class="body-text">Each facilitation container is a spiritual therapeutic journey for people who want more
+            support, more clarity, and more tools for navigating life better regulated, more whole and fully connected
+            to their own source consciousness. There are self-paced options for those who cannot commit to a weekly
+            cohort gathering. Select the most suitable one for you before you commit.</p>
+        <a [href]="bookletUrl" target="_blank" rel="noopener" class="btn-dark booklet-cta" download
+            data-ga-location="services-offers" data-ga-intent="booklet-download">Download the Programme Booklet (PDF) →</a>
+        <p class="booklet-note">The booklet walks you through the curriculum of each offer.</p>
+    </div>
+    <div class="offer-grid">
+        @for (o of offers; track o.num) {
+        <a class="offer-card reveal" (click)="setTab(o.tab)">
+            <span class="o-num">Option {{o.num}}</span>
+            <h3>{{o.name}}</h3>
+            <p class="o-format">{{o.format}}</p>
+            <p class="o-best"><strong>Best for:</strong> {{o.bestFor}}</p>
+            <span class="o-price">{{o.price}}</span>
+            <span class="o-arrow">View details →</span>
+        </a>
+        }
+    </div>
+</section>
+
 <nav class="svc-nav">
-    <a (click)="setTab('readings')" [class.active]="activeTab==='readings'">01 — Intuitive Readings</a>
-    <a (click)="setTab('breathwork')" [class.active]="activeTab==='breathwork'">02 — Breathwork Container</a>
-    <a (click)="setTab('cartomancy')" [class.active]="activeTab==='cartomancy'">03 — Card Reading Mentorship</a>
-    <a (click)="setTab('astral')" [class.active]="activeTab==='astral'">04 — Astral Gym</a>
-    <a routerLink="/contact">Book & Pay</a>
+    <a (click)="setTab('readings')" [class.active]="activeTab==='readings'">01 — Tarot Readings &amp; Spiritual Therapy</a>
+    <a (click)="setTab('breathwork')" [class.active]="activeTab==='breathwork'">02 — Regulation Blueprint</a>
+    <a (click)="setTab('cartomancy')" [class.active]="activeTab==='cartomancy'">03 — Divination &amp; Dreamwork</a>
+    <a (click)="setTab('astral')" [class.active]="activeTab==='astral'">04 — Dreamwork Matrix</a>
+    <a (click)="setTab('quantum')" [class.active]="activeTab==='quantum'">05 — Manifestation Support</a>
+    <a (click)="setTab('apothecary')" [class.active]="activeTab==='apothecary'">06 — Apothecary Orders</a>
+    <a (click)="setTab('stories')" [class.active]="activeTab==='stories'">07 — Success Stories</a>
+    <a routerLink="/contact">Book &amp; Pay</a>
 </nav>
 
-<!-- BESPOKE AUDIO READINGS (THE DROP) -->
+<!-- INTUITIVE AUDIO READINGS (THE DROP) -->
 @if (activeTab==='readings') {
 <section id="readings" class="svc-section">
     <div class="svc-content reveal">
         <span class="eyebrow">Service 01</span>
-        <h2 class="sec">Intuitive Audio &amp; <em>Live Readings</em></h2>
+        <h2 class="sec">Tarot Readings &amp; <em>Recurring Spiritual Therapy</em></h2>
         <div class="divider"></div>
         <p class="body-text"><strong>Intuitive card readings designed to give you instant clarity on your personal
                 journey.</strong></p>
@@ -51,6 +86,15 @@
                 <span class="price-amt">R800</span>
             </li>
         </ul>
+        <h4 class="sub-heading">Recurring Spiritual Therapy Packages</h4>
+        <ul class="price-table">
+            @for (t of therapyPackages; track t.name) {
+            <li>
+                <div><span class="price-name">{{t.name}}</span><span class="price-note">{{t.calc}}</span></div>
+                <span class="price-amt">{{t.total}}</span>
+            </li>
+            }
+        </ul>
         <div class="enrol-box">
             <h4>How the Drop System Works</h4>
             <p class="enrol-intro">Because readings are prepared with focused attention, slots are released in
@@ -76,25 +120,30 @@
 </section>
 }
 
-<!-- SOMATIC BREATHWORK CONTAINER -->
+<!-- DREAMWORK-BASED REGULATION BLUEPRINT (OPTIONS 1 & 2) -->
 @if (activeTab==='breathwork') {
 <section id="breathwork" class="svc-section dark">
     <div class="svc-content reveal">
-        <span class="eyebrow lt">Service 02</span>
-        <h2 class="sec lt">Somatic Breathwork <em>Container</em></h2>
+        <span class="eyebrow lt">Service 02 · Options 1 &amp; 2</span>
+        <h2 class="sec lt">Dreamwork-Based <em>Regulation Blueprint</em></h2>
         <div class="divider lt"></div>
-        <p class="body-text lt"><strong>A 6-week guided body-based breathwork journey to re-wire the nervous system,
-                release stress, and come home to your body.</strong></p>
-        <p class="body-text lt">If you feel constantly overwhelmed, stuck in tiredness, or disconnected from your
-            physical body, this intimate journey is designed to help you gently step out of survival consciousness and
-            liberate enough creative life-force to create change in your life.</p>
-        <p class="body-text lt">Through simple, guided breathwork practices, we help your nervous system let go of
-            stored tension sitting in the body and clear out <em>Isikhakhane</em> — the energetic residue of
-            unfinished business — so <em>uMoya wakho</em> (Spirit and Breath) can move freely, without the stickiness,
-            stagnation and slug that keeps progress at a distance.</p>
-        <h4 class="sub-heading lt">The 6-Week Journey: The 7 Inner Gateway Centers</h4>
-        <p class="body-text lt">Throughout our six weeks together, we move through the four cardinal directions and
-            align the seven body centers:</p>
+        <p class="body-text lt"><strong>An 8-week facilitation journey to clear energetic blocks, re-pattern your subtle
+                body, and seal your aura using your own dreams and somatic data.</strong></p>
+        <p class="body-text lt">Your aura is constantly broadcasting information out into the world around you. When
+            unhealed wounds, chronic anxiety, and unintegrated fear take over, your aura naturally constricts. You feel
+            stuck, drained, and blocked from the progress that is rightfully yours.</p>
+        <p class="body-text lt">To expand, you don't need more effort. You need proper regulation. You need to raise
+            umbilini up the spine, decipher the messages your subconscious is leaving in your dreams, and seal your
+            energetic field so your energy stays intact.</p>
+        <p class="body-text lt">Inside these containers we use the proprietary Dreamwork-Based Regulation Blueprint,
+            combining active astral and body tracking data to shift you from a constricted, fear-based state into
+            healthy, expanded magnetism. The tools help you map the how and why of each fight, flight, freeze or fawn
+            response, tracking it back to the childhood baseline (ages 0 to 7), so that you come out with perspective,
+            clarity and resolve.</p>
+
+        <h4 class="sub-heading lt">The Journey: The 7 Inner Gateway Centers</h4>
+        <p class="body-text lt">Through the breathwork portion of the curriculum we move through the four cardinal
+            directions and align the seven body centers:</p>
         <div class="chakra-list lt">
             @for (c of chakras; track c.num) {
             <div class="chakra-row">
@@ -104,21 +153,54 @@
             </div>
             }
         </div>
-        <div class="enrol-box lt">
-            <h4>Container Format &amp; Pricing</h4>
-            <div class="e-row"><span>Format</span><span>6-Week Virtual Group Container · Live Sessions + Practice
-                    Integration</span></div>
-            <div class="e-row"><span>Space Limit</span><span>Intimate cohort limited to 10 participants</span></div>
-            <div class="e-row"><span>Live Classes</span><span>R500 × 6 = R3,000</span></div>
-            <div class="e-row"><span>Guided Audio Resources</span><span>R180 × 6 = R1,080</span></div>
-            <div class="e-row"><span>Body &amp; Astral Tracking Resources</span><span>R169 × 6 = R1,044</span></div>
-            <div class="e-row"><span>Total Investment</span><span>R5,000 <small>(R5,124 rounded off · approx.
-                        $311 USD)</small></span></div>
-            <div class="e-row"><span>Payment</span><span>Payment plans available</span></div>
+
+        <h4 class="sub-heading lt">Two Ways to Join</h4>
+        <div class="tier-grid">
+            <div class="enrol-box lt tier">
+                <span class="tier-badge">Option 1 · Self-Paced</span>
+                <h4>Self-Paced Facilitation</h4>
+                <p class="enrol-intro">An 8-week self-directed journey. Best for self-motivated individuals seeking
+                    depth with maximum schedule flexibility.</p>
+                <ul class="tier-list">
+                    <li><strong>8 weeks of on-demand facilitation.</strong> Complete access to the video curriculum and
+                        somatic demonstrations.</li>
+                    <li><strong>Personalised dream unpacking framework.</strong> Structured prompts to decode your
+                        personal dream landscape and target weekly subconscious reprogramming.</li>
+                    <li><strong>Somatic integration.</strong> Guided practices to release fear-based constriction from
+                        the physical and subtle bodies.</li>
+                    <li><strong>Digital integration workbook.</strong> Downloadable 8-week guidebook with tracking
+                        sheets, reflective exercises, and aura-sealing processes.</li>
+                </ul>
+                <div class="e-row"><span>On-Demand Classes</span><span>R500 × 6 = R3,000</span></div>
+                <div class="e-row"><span>Dream Tracking Resource</span><span>R180 × 6 = R1,080</span></div>
+                <div class="e-row"><span>Body Tracking Tools</span><span>R169 × 6 = R1,014</span></div>
+                <div class="e-row tier-total"><span>Total Investment</span><span>R5,094</span></div>
+            </div>
+            <div class="enrol-box lt tier">
+                <span class="tier-badge">Option 2 · Live Cohort</span>
+                <h4>Full Immersion + Cohort Integration</h4>
+                <p class="enrol-intro">The complete 8-week framework paired with live collective virtual gathering,
+                    real-time guidance, and active accountability. Best for those who thrive inside a live, held
+                    container and value group integration.</p>
+                <ul class="tier-list">
+                    <li><strong>Everything in the Self-Paced vault.</strong></li>
+                    <li><strong>Weekly live integration gatherings.</strong> Cohort calls dedicated to real-time dream
+                        unpacking, somatic check-ins, group energy work and reflecting.</li>
+                    <li><strong>Private community container.</strong> A sacred space to share insights, track somatic
+                        progress, and integrate alongside fellow practitioners.</li>
+                </ul>
+                <div class="e-row"><span>Live Classes</span><span>R500 × 8 = R4,000</span></div>
+                <div class="e-row"><span>Dream Tracking Resource</span><span>R180 × 8 = R1,440</span></div>
+                <div class="e-row"><span>Body Tracking Tools</span><span>R169 × 8 = R1,352</span></div>
+                <div class="e-row tier-total"><span>Total Investment</span><span>R6,792</span></div>
+            </div>
         </div>
-        <div class="book-note lt"><strong>Status:</strong> Doors open next in August for the September 4th cohort.
-            Join the Community Mailing List for priority access — WhatsApp <strong>079-357-4091</strong>.</div>
-        <ul class="price-table lt" style="margin-top:2.5rem">
+        <div class="book-note lt"><strong>Enrollment for the next cycle is opening.</strong> Choose your option, then
+            send your name and chosen option via WhatsApp <strong>079-357-4091</strong> with proof of payment. Payment
+            plans available on request.</div>
+
+        <h4 class="sub-heading lt">Standalone Breathwork</h4>
+        <ul class="price-table lt" style="margin-top:1.4rem">
             <li>
                 <div><span class="price-name">60-Minute Breathwork Reset</span><span class="price-note">Monthly
                         standalone session</span></div>
@@ -143,24 +225,26 @@
 </section>
 }
 
-<!-- SPINAL-BASED CARTOMANCY CONTAINER -->
+<!-- DIVINATION & DREAMWORK CONTAINER (OPTION 3) -->
 @if (activeTab==='cartomancy') {
 <section id="cartomancy" class="svc-section peach">
-    <div class="svc-img reveal"><img src="assets/images/portraits/thembi-books.jpeg" alt="Card Reading Mentorship" /></div>
+    <div class="svc-img reveal"><img src="assets/images/portraits/thembi-books.jpeg" alt="Divination and Dreamwork Container" /></div>
     <div class="svc-content reveal d1">
-        <span class="eyebrow dk">Service 03</span>
-        <h2 class="sec">Spinal-Based <em>Cartomancy Container</em></h2>
+        <span class="eyebrow dk">Service 03 · Option 3</span>
+        <h2 class="sec">Divination &amp; <em>Dreamwork Container</em></h2>
         <div class="divider dk"></div>
-        <p class="body-text"><strong>A 26-week guided mentorship in intuitive cartomancy, dream unpacking, and symbolic
-                guidance.</strong></p>
+        <p class="body-text"><strong>A targeted 6-month deep-dive energetic recalibration merging cartomancy,
+                card-to-body mapping, dream unpacking, and somatic guidance.</strong></p>
         <p class="body-text">This is not fortune-telling. This is an intuitive, grounded, step-by-step framework
             designed to help you understand the language of the subconscious mind using symbolic playing cards, for the
             purpose of tapping into celestial cosmology for greater clarity and understanding, and working with innate
             body wisdom, ancient frequency reading, and the indigenous knowledge systems of ancient African
-            civilisations. More than anything, through this programme you exercise and sharpen your intuitive muscles
-            weekly and learn to trust your body wisdom more.</p>
-        <p class="body-text">Whether you are seeking personal self-knowledge or looking to develop your reading practice
-            for others, this container helps you build unshakeable confidence in your intuitive voice.</p>
+            civilisations. Through this programme you exercise and sharpen your intuitive muscles weekly and learn to
+            trust your body wisdom more.</p>
+        <p class="body-text">Dreams are subconscious activity, and divination is subconscious activity as well. Alongside
+            the cards we work through mental blocks using journaling prompts that pull hidden subconscious patterns up
+            to the surface, overriding the regular conscious gatekeeping of the logical mind. You see yourself from a
+            completely different perspective when undressing subconscious information.</p>
         <h4 class="sub-heading">The Core Pillars of the Work</h4>
         <div class="pillars-grid">
             @for (p of pillars; track p.num) {
@@ -171,63 +255,60 @@
             </div>
             }
         </div>
-        <div class="enrol-box">
-            <h4>Mentorship Format &amp; Pricing</h4>
-            <div class="e-row"><span>Format</span><span>26-Week Virtual Mentorship · Weekly Live Classes + Dream
-                    Unpacking</span></div>
-            <div class="e-row"><span>Space Limit</span><span>Intimate group limited to 20 participants</span></div>
-            <div class="e-row"><span>Current Cycle</span><span>Currently in session · Launched June 25th</span></div>
-            <div class="e-row"><span>Live Classes</span><span>R375 × 4 classes a month = R1,500 / month</span></div>
-            <div class="e-row"><span>Astral &amp; Body Tracking Resources</span><span>R150 × 4 weeks = R600
-                    <small>(included in deposit fee)</small></span></div>
-            <div class="e-row"><span>Total Investment</span><span>R1,500 × 6 months = R9,000</span></div>
+
+        <h4 class="sub-heading">Two Tiers</h4>
+        <div class="tier-grid">
+            <div class="enrol-box tier">
+                <span class="tier-badge">Tier A · Self-Paced</span>
+                <h4>Independent Study</h4>
+                <ul class="tier-list">
+                    <li>Full access to the 6-month video vault.</li>
+                    <li>Card-to-body mapping guides.</li>
+                    <li>Independent divination tools.</li>
+                </ul>
+            </div>
+            <div class="enrol-box tier">
+                <span class="tier-badge">Tier B · Live Cohort</span>
+                <h4>Live Cohort</h4>
+                <ul class="tier-list">
+                    <li>The complete video and workbook vault.</li>
+                    <li>Weekly live divination check-ins and collective card pulls.</li>
+                    <li>Real-time dream analysis during cohort calls.</li>
+                </ul>
+            </div>
         </div>
-        <div class="book-note"><strong>Applications are currently closed.</strong> Join the Community Mailing List to
-            be notified when the next enrollment window opens — WhatsApp <strong>079-357-4091</strong>.</div>
+        <div class="enrol-box">
+            <h4>Container Format &amp; Pricing</h4>
+            <div class="e-row"><span>Format</span><span>6-Month Virtual Container · Self-Paced or Weekly Live
+                    Cohort</span></div>
+            <div class="e-row"><span>Space Limit</span><span>Live cohort limited to 20 participants</span></div>
+            <div class="e-row"><span>Classes</span><span>R375 × 4 classes a month = R1,500 / month</span></div>
+            <div class="e-row"><span>Astral &amp; Body Tracking Tools</span><span>R150 × 4 = R600</span></div>
+            <div class="e-row tier-total"><span>Total Investment · 6 Months</span><span>R9,600</span></div>
+        </div>
+        <div class="book-note"><strong>Enrollment for the next cycle is opening.</strong> Choose your tier, then send
+            your name and chosen tier via WhatsApp <strong>079-357-4091</strong> with proof of payment.</div>
         <h4 class="sub-heading">For Current Enrolled Students</h4>
-        <a [href]="dreamVaultUrl" target="_blank" rel="noopener" class="vault-link" data-ga-location="services-breathwork" data-ga-form="dream-vault">Submit Your Dreams via the Dream
+        <a [href]="dreamVaultUrl" target="_blank" rel="noopener" class="vault-link" data-ga-location="services-cartomancy" data-ga-form="dream-vault">Submit Your Dreams via the Dream
             Unpacking Vault →</a>
     </div>
 </section>
 }
 
-<!-- ASTRAL GYM (ALUMNI MEMBERSHIP) -->
+<!-- DREAMWORK MATRIX (OPTION 4, THE ASTRAL GYM) -->
 @if (activeTab==='astral') {
 <section id="astral" class="svc-section cream">
     <div class="svc-content reveal">
-        <span class="eyebrow">Service 04 · Alumni Only</span>
-        <h2 class="sec">The Astral <em>Gym</em></h2>
+        <span class="eyebrow">Service 04 · Option 4</span>
+        <h2 class="sec">Dreamwork <em>Matrix</em></h2>
         <div class="divider"></div>
-        <p class="body-text"><strong>An exclusive maintenance container for alumni of the 6-week body-based breathing
-                container.</strong></p>
-        <p class="body-text">You've done the foundational work. You know how ancestral totems move through your sleep
-            state, how your body tracks subconscious material, and how to read the symbolic language of your astral
-            travels through dreams.</p>
-        <p class="body-text">The Astral Gym is your ongoing expansion space — a dedicated space to keep your nervous
-            system consistently balanced, your astral dream state clear and active through regular unpacking of the
-            downloads you receive through sleep, and your subconscious integration consistent.</p>
-        <div class="book-note"><strong>Alumni only.</strong> Available only to clients who have been inside the 6-week
-            spinal breathwork container.</div>
-
-        <h4 class="sub-heading">Dream Alchemy</h4>
-        <h3 class="sub-title">Transmuting Psychic Lead into Astral Gold</h3>
-        <p class="body-text">In our work in these containers, we don't treat dream imagery as random sleep residue. We
-            work with dreams as ancient cultures did — as sacred, dynamic bridges between the physical, psychological,
-            and spiritual realms.</p>
-        <p class="body-text">In the Astral Gym, we use Jungian depth psychology, somatic tracking, and ancient dream
-            incubation to guide your nighttime downloads through the four stages of the Magnum Opus:</p>
-        <div class="chakra-list">
-            @for (s of alchemyStages; track s.num) {
-            <div class="chakra-row">
-                <span class="c-n">{{s.num}}</span>
-                <span class="c-name">{{s.name}}</span>
-                <span class="c-desc">{{s.desc}}</span>
-            </div>
-            }
-        </div>
+        <p class="body-text"><strong>Targeted monthly support focused purely on subconscious dreamwork and regular
+                somatic down-regulation.</strong></p>
+        <p class="body-text">This is your ongoing maintenance space. A dedicated container to keep your nervous system
+            consistently balanced, your astral dream state clear and active through regular unpacking of the downloads
+            you receive through sleep, and your subconscious integration consistent.</p>
 
         <h4 class="sub-heading">What's Included</h4>
-        <h3 class="sub-title">The Monthly Membership Experience</h3>
         <div class="pillars-grid">
             @for (g of gymIncludes; track g.num) {
             <div class="pillar-card">
@@ -238,30 +319,147 @@
             }
         </div>
 
-        <h4 class="sub-heading">Why Alumni Only?</h4>
-        <h3 class="sub-title">A Dedicated Vessel for Astral Integration</h3>
-        <p class="body-text">This package is intentionally closed to the general public, simply because unless you have
-            done the groundwork to understand totems, dream symbolism and your own ancestral blueprint, you will not
-            understand the dream unpackings and how they reflect the work being done on your astral body. If you have
-            already completed the 6-week container, you arrive with an established understanding of ancestral totems,
-            somatic tracking, and depth psychology.</p>
-        <p class="body-text">We skip the basics so we can dive straight into advanced dream alchemy as a personal
-            practice, through real-time nervous system resets and subconscious reprogramming.</p>
+        <h4 class="sub-heading">Dream Alchemy</h4>
+        <h3 class="sub-title">Transmuting Psychic Lead into Astral Gold</h3>
+        <p class="body-text">We don't treat dream imagery as random sleep residue. We work with dreams as ancient
+            cultures did, as sacred, dynamic bridges between the physical, psychological, and spiritual realms.</p>
+        <p class="body-text">Using Jungian depth psychology, somatic tracking, and ancient dream incubation we guide
+            your nighttime downloads through the four stages of the Magnum Opus:</p>
+        <div class="chakra-list">
+            @for (s of alchemyStages; track s.num) {
+            <div class="chakra-row">
+                <span class="c-n">{{s.num}}</span>
+                <span class="c-name">{{s.name}}</span>
+                <span class="c-desc">{{s.desc}}</span>
+            </div>
+            }
+        </div>
 
         <div class="enrol-box">
-            <h4>Membership Details &amp; Sign-Up</h4>
-            <p class="enrol-intro">A monthly maintenance practice after completing the groundwork.</p>
-            <div class="e-row"><span>Eligibility</span><span>Alumni of the 6-week breathwork container</span></div>
-            <div class="e-row"><span>Monthly Investment</span><span>R500 / $31 USD per month</span></div>
-            <div class="e-row"><span>Commitment</span><span>Cancel or pause anytime</span></div>
-            <div class="e-row"><span>Includes</span><span>Live monthly reset · Practice replays · Unlimited dream
-                    unpackings</span></div>
+            <h4>Format &amp; Pricing</h4>
+            <p class="enrol-intro">Monthly support for a 6-month cycle.</p>
+            <div class="e-row"><span>Live Gathering</span><span>1 × monthly live somatic reset</span></div>
+            <div class="e-row"><span>Dream Log Unpacking</span><span>Ongoing, submitted via the Dream Vault</span></div>
+            <div class="e-row"><span>Monthly Investment</span><span>R500 per month</span></div>
+            <div class="e-row tier-total"><span>Commitment</span><span>6 months</span></div>
         </div>
-        <a [href]="astralGymUrl" target="_blank" rel="noopener" class="btn-dark drop-cta" data-ga-location="services-astral-gym" data-ga-intent="astral-gym">Join the Astral Gym →</a>
+        <a [href]="dreamworkMatrixUrl" target="_blank" rel="noopener" class="btn-dark drop-cta" data-ga-location="services-dreamwork-matrix" data-ga-form="dreamwork-matrix-signup">Complete the Intake &amp; Sign-Up Form →</a>
     </div>
     <div class="svc-img-stack reveal d1">
-        <img src="assets/images/portraits/portrait-outdoor.jpg" alt="Astral Gym" class="top-img" />
+        <img src="assets/images/portraits/portrait-outdoor.jpg" alt="Somatic reset" class="top-img" />
         <img src="assets/images/bulletin/wa-dream.jpg" alt="Dream unpacking" class="btm-img" />
+    </div>
+</section>
+}
+
+<!-- QUANTUM COLLAPSING MANIFESTATION SUPPORT -->
+@if (activeTab==='quantum') {
+<section id="quantum" class="svc-section dark">
+    <div class="svc-img reveal"><img src="assets/images/portraits/portrait-rust.jpg" alt="Bruja Thembi" /></div>
+    <div class="svc-content reveal d1">
+        <h2 class="sec lt">Quantum Collapsing <em>Manifestation Support</em></h2>
+        <div class="divider lt"></div>
+        <p class="body-text lt"><strong>Rolling out for 2027, this is a dedicated, one-on-one coaching and
+                manifestation support service focused on aura through spirit work.</strong></p>
+        <p class="body-text lt">Manifestation is not about luck; it is about working directly with your own spirit,
+            expanding your energy, and shifting your state first so you change long before your reality does.</p>
+        <p class="body-text lt">Natural laws (gravity, ecosystems, indigenous cosmology) are relational, cyclical, and
+            self-balancing. This is what we draw from in this work.</p>
+        <h4 class="sub-heading lt">Scope of Results</h4>
+        <p class="body-text lt">Clients shift from manifesting small items (parking spots, coffee) to successfully
+            collapsing waves into matter in bigger ways in their lives.</p>
+        <div class="enrol-box lt">
+            <h4>Package Structure</h4>
+            <div class="e-row"><span>Format</span><span>12 individual video call sessions</span></div>
+            <div class="e-row"><span>Duration</span><span>3 months</span></div>
+            <div class="e-row"><span>Support</span><span>One-on-one coaching</span></div>
+        </div>
+        <p class="body-text lt rationale">This timeframe matches how long it typically takes an average person's
+            baseline to change, register adjustments, and reflect those changes physically.</p>
+        <a [href]="quantumUrl" target="_blank" rel="noopener" class="btn-primary drop-cta" data-ga-location="services-quantum" data-ga-form="quantum-signup">Sign Up for This Package →</a>
+    </div>
+</section>
+}
+
+<!-- SOMATIC APOTHECARY ORDER FORM INSTRUCTIONS -->
+@if (activeTab==='apothecary') {
+<section id="apothecary" class="svc-section peach">
+    <div class="svc-content reveal">
+        <h2 class="sec">The Somatic Apothecary <em>Order Form</em></h2>
+        <div class="divider dk"></div>
+        <h4 class="sub-heading spaced">Production &amp; Delivery</h4>
+        <p class="body-text">Orders are collected throughout the month and delivered in the last week of every month.
+            Every item, including organic mineral and herb offerings, is carefully crafted, smoke-cleansed, and charged
+            with intention before shipping.</p>
+        <p class="body-text">Only fill in the boxes where you place an order; leave everything else empty except the
+            delivery details at the bottom.</p>
+        <h4 class="sub-heading spaced">Payment Processing</h4>
+        <p class="body-text">Once you click "submit" on the form, you will receive an email with your invoice (price
+            total) and can expect parcel tracking details with shipping details.</p>
+        <a [href]="orderFormUrl" target="_blank" rel="noopener" class="btn-dark drop-cta" data-ga-location="services-apothecary" data-ga-form="aura-care-order">Order Aura Care Products →</a>
+        <a routerLink="/apothecary" class="vault-link">See the full product range →</a>
+        <p class="body-text closing">Thank you for shopping at The Somatic Apothecary.</p>
+        <p class="salute">Thokozani, Lesedi, Camagu, Thobela!</p>
+    </div>
+    <div class="svc-img-stack reveal d1">
+        <img src="assets/images/portraits/portrait-red-bg.jpg" alt="Bruja Thembi packing apothecary orders" class="top-img" />
+        <img src="assets/images/products/herbs-styled.jpg" alt="Apothecary herbs" class="btm-img" />
+    </div>
+</section>
+}
+
+<!-- SUCCESS STORIES & FEEDBACK (ECZEMA CASE STUDY) -->
+@if (activeTab==='stories') {
+<section id="stories" class="svc-section stories">
+    <div class="story-video">
+        <h2 class="sec lt reveal">Success Stories &amp; Feedback: <em>The Eczema Case Study</em></h2>
+        <div class="divider lt"></div>
+        <div class="video-frame reveal d1">
+            <iframe [src]="caseStudyEmbedUrl" title="Physical Health Changes: the eczema case study video essay"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <a [href]="caseStudyWatchUrl" target="_blank" rel="noopener" class="btn-primary story-watch" data-ga-location="services-stories">Watch the Full Video Essay on YouTube →</a>
+    </div>
+    <div class="story-body">
+        <div class="story-col reveal">
+            <p class="body-text"><strong>A truly holistic approach doesn't separate the skin from the mind and the state
+                    of the nervous system as a whole. This eczema case demonstrates that beautifully.</strong></p>
+            <p class="body-text">The recent video essay, "Physical Health Changes," took me back six years to when we
+                received our very first eczema case.</p>
+            <p class="body-text">Healing a 30-year pattern requires addressing both the physical barrier and the busy
+                state of the nervous system.</p>
+            <p class="body-text">Eczema is rarely just a localized skin condition; chronic, long-term inflammatory skin
+                expressions are deeply tied to autonomic nervous system dysregulation.</p>
+            <p class="body-text">When you stop trying to micromanage physical symptoms at the surface level and instead
+                shift your biological baseline through consistent nervous system regulation, the physical body
+                naturally reorganises itself. Healing 30 years of skin inflammation in less than a year is what happens
+                when the cause changes and physical reflections finally catch up with the internal shifts made
+                within.</p>
+            <p class="body-text">When your body is stuck in fight-or-flight, it releases cytokines that degrade the skin
+                barrier, keeping the immune system locked in a hyper-vigilant attack loop against its own cells.
+                Long-term healing requires shifting your baseline:</p>
+            <div class="enrol-box">
+                <div class="e-row"><span>Before state</span><span>Survival and reactivity</span></div>
+                <div class="e-row"><span>After state</span><span>Safety and regulation, from chaos to calm</span></div>
+            </div>
+        </div>
+        <div class="story-col reveal d1">
+            <h3 class="sub-title">Radical self-actualisation is what is being promoted.</h3>
+            <p class="body-text">We aren't offering random spiritual wellness advice or temporary relief; we aim to
+                provide concrete, foundational tools so people can actively regulate, unpack, and work with their own
+                inner guidance confidently. Whether through somatic breathwork for increasing umbilini, building
+                magnetism and resetting the nervous system, dreamwork to observe subconscious patterns (memory)
+                clearly, astral tracking resources that help a person reflect, or intuitive frameworks such as
+                cartomancy, every piece of the puzzle centers on agency.</p>
+            <p class="body-text"><strong>There are people who just talk about inner work, and then there are people who
+                    practice and act on it. Which one are you?</strong></p>
+            <p class="body-text">Every week we gather in groups and put these tools to use, allowing people to observe
+                themselves, their patterns of habit and how these impact their choices and overall decision-making,
+                moving from passive survival based on a conceptual understanding into active, self-directed
+                transformation, which is the essence of radical self-actualisation.</p>
+        </div>
     </div>
 </section>
 }
@@ -278,15 +476,16 @@
 <div class="booking-banner">
     <div class="reveal">
         <span class="eyebrow lt">How to Book</span>
-        <h2 class="sec lt">Ready to <em>Begin?</em></h2>
+        <h2 class="sec lt">Let's seal your energy and <em>expand your field.</em></h2>
         <div class="divider lt"></div>
         <p class="body-text lt">For readings, secure a slot through the booking form when a drop is live. For
-            containers and everything else, send your name, service, and questions via WhatsApp with proof of payment.
-            Sessions are confirmed once payment reflects.</p>
+            facilitation containers, choose the option that matches your capacity, then send your name, chosen option
+            and questions via WhatsApp with proof of payment. Your place is confirmed once payment reflects.</p>
         <div class="banner-ctas">
             @if (drop.open) {
             <a [href]="bookingFormUrl" target="_blank" rel="noopener" class="btn-primary" data-ga-location="services-cta" data-ga-form="session-booking">Secure a Reading Slot</a>
             }
+            <a [href]="bookletUrl" target="_blank" rel="noopener" class="btn-primary" download data-ga-location="services-cta" data-ga-intent="booklet-download">Download the Booklet</a>
             <a routerLink="/contact" class="btn-primary">Contact Thembi</a>
         </div>
     </div>

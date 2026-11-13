@@ -1,8 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
-import { ASTRAL_GYM_SIGNUP_URL, BOOKING_FORM_URL, DREAM_VAULT_FORM_URL, DROP } from '../../shared/booking-links';
+import {
+  AURA_CARE_ORDER_FORM_URL,
+  BOOKING_FORM_URL,
+  DREAM_VAULT_FORM_URL,
+  DREAMWORK_MATRIX_SIGNUP_URL,
+  DROP,
+  ECZEMA_CASE_STUDY_VIDEO_ID,
+  PROGRAMME_BOOKLET_URL,
+  QUANTUM_SIGNUP_URL,
+} from '../../shared/booking-links';
 
 @Component({
   selector: 'app-services',
@@ -14,8 +24,19 @@ export class Services implements AfterViewInit {
   activeTab = 'readings';
   bookingFormUrl = BOOKING_FORM_URL;
   dreamVaultUrl = DREAM_VAULT_FORM_URL;
-  astralGymUrl = ASTRAL_GYM_SIGNUP_URL;
+  dreamworkMatrixUrl = DREAMWORK_MATRIX_SIGNUP_URL;
+  quantumUrl = QUANTUM_SIGNUP_URL;
+  orderFormUrl = AURA_CARE_ORDER_FORM_URL;
+  caseStudyWatchUrl = `https://youtu.be/${ECZEMA_CASE_STUDY_VIDEO_ID}`;
   drop = DROP;
+  bookletUrl = PROGRAMME_BOOKLET_URL;
+
+  offers = [
+    { num: '1', tab: 'breathwork', name: 'Dreamwork-Based Regulation Blueprint · Self-Paced', format: '8 weeks · on-demand video, workbook and tracking tools', bestFor: 'self-motivated individuals seeking depth with maximum schedule flexibility.', price: 'R5,094' },
+    { num: '2', tab: 'breathwork', name: 'Full Immersion Facilitation + Cohort Integration', format: '8 weeks · weekly live gatherings and a private community container', bestFor: 'those who thrive inside a live, held container and value group learning.', price: 'R6,792' },
+    { num: '3', tab: 'cartomancy', name: 'Divination & Dreamwork Container', format: '6 months · cartomancy, card-to-body mapping and dream unpacking, self-paced or live cohort', bestFor: 'those ready for a deep energetic recalibration through the cards.', price: 'R1,500 / month' },
+    { num: '4', tab: 'astral', name: 'Dreamwork Matrix', format: '6 months · one live somatic reset a month plus ongoing dream log unpacking', bestFor: 'ongoing monthly support focused purely on dreamwork and down-regulation.', price: 'R500 / month' },
+  ];
 
   alchemyStages = [
     { num: '1', name: 'Nigredo (The Lead)', desc: 'Facing the shadow, heavy imagery, and uncomfortable subconscious material surfacing in nightmares or complex dreams.' },
@@ -25,12 +46,21 @@ export class Services implements AfterViewInit {
   ];
 
   gymIncludes = [
-    { num: 'I', title: 'Monthly Live Astral Resets', desc: 'A recurring virtual gathering where we come together to clear energetic static, align the spinal channel, and reset the dream and astral body using targeted spinal breathing exercises.' },
-    { num: 'II', title: 'The Practice Vault', desc: 'On-demand replays. Full access to replay links so you can practise and integrate the spinal breathing, nervous system resets, and dream-prep breathwork independently throughout the month.' },
-    { num: 'III', title: 'Unlimited Monthly Dream Unpackings', desc: 'Direct, ongoing access to depth-psychology dream unpackings. Submit your dream logs anytime to receive symbolic literacy, somatic tracking guidance, and ancestral context specific to the lineal blueprint from both the maternal and paternal side.' },
-    { num: 'IV', title: 'Continuous Integration', desc: 'Keep your dream-recall muscles sharp alongside practitioners who speak the same language as you do.' },
+    { num: 'I', title: 'Monthly Live Somatic Reset Gathering', desc: 'One live virtual gathering a month focused on deep reset breathwork and somatic clearing: clearing energetic static, aligning the spinal channel, and resetting the dream and astral body.' },
+    { num: 'II', title: 'Dedicated Dream Log Unpacking', desc: 'Ongoing analysis and personalised energetic clearing processes based on your dream data. Submit your dream logs to receive symbolic literacy, somatic tracking guidance, and ancestral context from both the maternal and paternal side.' },
   ];
+  therapyPackages = [
+    { name: '3 Months (12 Weeks)', calc: 'R600 × 12', total: 'R7,200' },
+    { name: '6 Months (26 Weeks)', calc: 'R600 × 26', total: 'R15,600' },
+    { name: '12 Months (52 Weeks)', calc: 'R600 × 52', total: 'R31,200' },
+  ];
+
   private reveal = inject(ScrollRevealService);
+  private sanitizer = inject(DomSanitizer);
+
+  caseStudyEmbedUrl: SafeResourceUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+    `https://www.youtube-nocookie.com/embed/${ECZEMA_CASE_STUDY_VIDEO_ID}?rel=0`
+  );
 
   chakras = [
     { num: '1', name: 'Isisekelo (Root)', desc: 'Your steady foundation — rooted deep into the earth while connected to the sky above.' },
